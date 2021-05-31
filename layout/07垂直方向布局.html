@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .outer{
+            /* 
+                默认情况父元素的高度被内容撑开 
+                设定了就为设定值
+            */
+            background-color: #bfa;
+        }
+
+        .inner{
+            width: 100px;
+            background-color: yellow;
+            height: 200px;
+            margin-bottom: 100px;
+
+        }
+
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: tomato;
+            /* 
+                子元素是在父元素的内容区中排列的
+                    如果子元素的大小超过父元素，则子元素会从父元素中溢出
+
+                使用overflow属性来设置父元素中处理溢出的方式
+                -可选择：
+                    visiable:默认值，没有任何效果，在外部显示
+                    hidden: 溢出内容被裁减，不会被显示
+                    scoll:生成两个方向的滚动条
+                    auto:根据需要生成滚动条
+                    overflow-x:处理水平方向的溢出
+                    overflow-y:处理垂直方向的溢出
+             */
+             overflow: auto;
+        }
+
+        .box2{
+            width: 100px;
+            height: 400px;         
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="outer">
+        <div class="inner"></div>
+        <div class="inner"></div>   
+    </div> -->
+
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+
+</body>
+</html>
