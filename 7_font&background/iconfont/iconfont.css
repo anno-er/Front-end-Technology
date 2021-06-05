@@ -1,0 +1,95 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 2593660 */
+  src: url('iconfont.woff2?t=1622865423228') format('woff2'),
+       url('iconfont.woff?t=1622865423228') format('woff'),
+       url('iconfont.ttf?t=1622865423228') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-icon-huwai20:before {
+  content: "\e63e";
+}
+
+.icon-icon-huwai19:before {
+  content: "\e63f";
+}
+
+.icon-icon-huwai16:before {
+  content: "\e640";
+}
+
+.icon-icon-huwai18:before {
+  content: "\e641";
+}
+
+.icon-icon-huwai17:before {
+  content: "\e642";
+}
+
+.icon-icon-huwai13:before {
+  content: "\e643";
+}
+
+.icon-icon-huwai14:before {
+  content: "\e644";
+}
+
+.icon-icon-huwai11:before {
+  content: "\e645";
+}
+
+.icon-icon-huwai15:before {
+  content: "\e646";
+}
+
+.icon-icon-huwai12:before {
+  content: "\e647";
+}
+
+.icon-icon-huwai9:before {
+  content: "\e648";
+}
+
+.icon-icon-huwai8:before {
+  content: "\e649";
+}
+
+.icon-icon-huwai6:before {
+  content: "\e64a";
+}
+
+.icon-icon-huwai10:before {
+  content: "\e64b";
+}
+
+.icon-icon-huwai4:before {
+  content: "\e64c";
+}
+
+.icon-icon-huwai3:before {
+  content: "\e64d";
+}
+
+.icon-icon-huwai1:before {
+  content: "\e64e";
+}
+
+.icon-icon-huwai5:before {
+  content: "\e64f";
+}
+
+.icon-icon-huwai2:before {
+  content: "\e650";
+}
+
+.icon-icon-huwai7:before {
+  content: "\e651";
+}
+

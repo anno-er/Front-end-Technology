@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            font-size: 50px;
+            font-family: 微软雅黑;
+
+            /* 
+                text-decoration 设置文本修饰
+                    可选值：
+                        none 默认值 什么都没有
+                        underline 下划线
+                        line-through 删除线
+                        overline 上划线
+            */
+            /* text-decoration:overline; */
+
+            /* text-decoration: underline red dotted; */
+        }
+
+        .box2{
+            /* 
+                white-space 设置网页中如何处理空白
+                    可选值：
+                        normal 正常换行 默认值
+                        nowrap 不换行
+                        pre 保留空白
+            */
+            width: 200px;
+            font-size: 25px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="box1">
+        今天天气真不错。
+    </div>
+    <div class="box2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ratione incidunt, illum consequatur commodi neque ea impedit corporis necessitatibus culpa. Voluptatum minus rerum, nobis sapiente minima dignissimos quos illo obcaecati!
+    </div>
+</body>
+</html>

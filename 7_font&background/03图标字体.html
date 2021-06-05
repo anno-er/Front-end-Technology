@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./fontawesome/css/all.css">
+    <style>
+        li {
+            list-style: none;
+        }
+
+        /* 
+            通过伪元素设置图表字体
+                1、找到要设置图标的元素，通过before或者after选中
+                2、在content中设置字体的编码
+                3、设置字体的样式
+                    fab
+                    font-family: 'Font Awesome 5 Brands';
+                    font-weight: 400;
+
+                    fas
+                    font-family: 'Font Awesome 5 Free';
+                    font-weight: 900;
+
+        
+        */
+
+        li::before {
+            content: '\f368';
+            font-family: 'Font Awesome 5 Brands';
+            font-weight: 400;
+            color: brown;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <i class="fas fa-cat"></i> -->
+    <ul>
+        <li>锄禾日当午</li>
+        <li>汗滴禾下土</li>
+        <li>谁知盘中餐</li>
+        <li>粒粒皆辛苦</li>
+    </ul>
+
+    <span class="fas fa-bell"></span>
+    <!-- 通过实体调用字体 -->
+    <span class="fas">&#xf0f3;</span>
+
+    <!-- <ul>
+        <li>
+            <i class="fas fa-star"></i>
+            锄禾日当午
+        </li>
+        <li>
+            <i class="fas fa-star"></i>
+            汗滴禾下土
+        </li>
+        <li>
+            <i class="fas fa-star"></i>
+            谁知盘中餐
+        </li>
+        <li>
+            <i class="fas fa-star"></i>
+            粒粒皆辛苦
+        </li>
+    </ul> -->
+
+</body>
+
+</html>
