@@ -1,6 +1,6 @@
 /* 主页index.html的样式表 */
 /* 顶部容器样式 */
-.topbar-warpper{
+.topbar-wrapper{
     width: 100%;
     height: 40px;
     line-height: 40px;
@@ -136,3 +136,134 @@
 .cart-menumsg{
     font-size: 12px;
 }
+
+/* 设置中间的header */
+.header{
+    height: 100px;
+}
+
+.header-wrapper{
+    position: relative;
+}
+/* 设置中间的logo */
+.header .logo{
+    float: left;
+    margin-top: 22.5px;
+    width: 55px;
+    height: 55px;
+    overflow: hidden;
+    position: relative;
+    /* 隐藏文字 */
+    font-size: 0px;
+}
+
+.header .logo a{
+    position: absolute;
+    display: block;
+    width: 55px;
+    height: 55px; 
+}
+
+
+/* 设置中间的导航条 */
+.header .nav-wrapper{
+    float: left;
+    margin-left: 7px;
+}
+
+.nav-wrapper ul{
+    padding-left: 58px;
+}
+
+.nav-wrapper li{
+    float: left;
+}
+
+.header .nav{
+    /* width: 792px; */
+    height: 100px;
+    line-height: 100px;
+    background-color: #fff;
+}
+
+.nav-wrapper li a{
+    display: block;
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+.nav-wrapper li a:hover{
+    color: #ff6700;
+}
+
+/* 隐藏“全部商品分类” */
+.all-goods{
+    visibility: hidden;
+}
+
+
+/* 设置中间导航条下拉框 */
+.nav .goods-info{
+    height: 0px;
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff ;
+
+    position: absolute;
+    top: 100px;
+    left:0px;
+    transition: height 0.3s;
+}
+
+.nav .show-goods:hover ~.goods-info{
+    height: 228px;
+    border-top: 1px solid rgb(224, 224, 224);
+    box-shadow: 0 2px 2px rgba(0,0,0,.15);
+}
+
+
+/* 设置右边搜索框 */
+
+.search-wrapper{
+    width: 296px;
+    height: 50px;
+    float: right;
+    margin-top: 25px;
+}
+
+.search-wrapper .search-inp{
+    border:none;
+    text-indent: 10px;
+    font-size: 16px;
+    float: left;
+    margin: 0;
+    padding: 0;
+    height: 48px;
+    border:1px solid rgb(224, 224, 224);
+    width: 243px;
+}
+
+/* 设置input获取焦点后的样式 */
+.search-wrapper .search-inp:focus,
+.search-wrapper .search-inp:focus + button{
+    outline: 1px solid #ff6700;
+}
+
+.search-wrapper .search-btn{
+    height:50px;
+    width: 51px;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #616161;
+    font-size: 16px;
+    border: 1px solid rgb(224, 224, 224);  
+    border-left: none;
+}
+
+.search-wrapper .search-btn:hover{
+    background-color: #ff6700;
+    color: white;
+    border: none;
+}
+
