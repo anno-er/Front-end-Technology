@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .box1{
+            width: 800px;
+            height: 800px;
+            background-color: silver;
+            overflow: hidden;
+        }
+        
+        .box2{
+            width: 100px;
+            height: 100px;
+            margin-bottom: 100px;
+        }
+
+        .box2{
+            background-color: skyblue;
+            /* transition: all 2s; */
+            /* 
+                过渡（transition）：
+                    -通过过渡可以指定一个属性发生变化时的切换方式
+                    -通过过渡可以创建一些非常好的效果，提升用户的体验
+
+                属性：
+                    transition-property: 指定要执行过渡的属性,多个属性间使用逗号隔开，
+                                        如果所有属性都要过渡。则使用all
+                                        大部分属性都支持过渡效果（能计算的）
+                                        是一个有效值到另一个有效值的过渡
+
+                    transition-duration: 指定过渡效果的持续时间 单位s 、ms
+                                         
+                    transition-timing-function: 指定过渡的时间函数(z执行方式)
+                                        可选值：
+                                            ease:慢速开始，先加速，再减速
+                                            linear:匀速运动
+                                            ease-in：慢速开始，一直加速
+                                            ease-out:快速开始，一直减速
+                                            ease-in-out:先加速，后减速
+                                            cubic-bezier()：贝塞尔曲线指定
+                                            steps():分步执行过渡效果
+                                                end表示在时间结束时执行过渡
+                                                start表示在时间开始时执行过渡
+
+                    transition-delay: 过渡效果的延迟,等待设定的时间后再执行过渡
+             */
+            /* transition-property: width,height; */
+
+            /* transition-property: all;
+            transition-duration: 2s;
+            transition-timing-function: steps(20,end);
+            transition-delay: 2s; */
+
+            /* 简写属性transition: 同时设置所有的过渡属性，只有一个要求，则两个时间中的第一个时持续时间，后一个时延迟时间 */
+            transition:2s margin-left 1s
+        }
+
+        .box1:hover .box2{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            margin-left: 600px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

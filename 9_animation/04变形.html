@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: coral;
+            margin: 0 auto;
+            margin-top: 200px;
+
+            /* 
+                变形就是指通过css改变元素的形状或者位置
+                    -   变形不会影响页面的布局
+                    -   transform 用来设置元素的变形效果 不会导致脱离文档流 
+                        -平移
+                           translateX()沿着X轴方向平移
+                           translateY()沿着Y轴方向平移
+                           translateZ()沿着Z轴方向平移
+                                -平移元素 时，百分比是相对于自身定位的
+
+             */
+             transform: translateX(100px);
+             transform: translateY(100px);
+
+        }
+
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: coral;
+            margin: 0 auto;
+        }
+
+        .box3{
+            width: 100px;
+            height: 100px;
+            background-color: cyan;
+
+            /* 用transform 设置居中 */
+            left:50%;
+            top:50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        .box4,.box5{
+            width: 220px;
+            height: 300px;
+            background-color: #fff;
+            float: left;
+            margin:  0 10px;
+            transition: all 0.3s;
+        }
+
+
+        .box4:hover,.box5:hover{
+            transform: translateY(-4px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body style="height: 2000px;background-color: rgb(228, 221, 221);">
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3">aaaa</div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+
+</body>
+</html>

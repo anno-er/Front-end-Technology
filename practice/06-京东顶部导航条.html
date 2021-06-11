@@ -74,7 +74,7 @@
 
             /* 设置绝对定位，使其不占空间 */
             position: absolute;
-            top: 31px;
+            top: 30px;
             box-shadow: 0 2px 2px rgba(0 , 0, 0, 0.3);
             z-index: 100;
         }
@@ -84,25 +84,23 @@
         .location:hover .city-list{
             display: block;
             float: left;
-            
         }
 
         .current-city{
             height: 30px;
             padding:0 10px;
             border: 1px solid transparent;
-            padding-bottom: 1px; 
+            /* padding-bottom: 1px;  */
 
             z-index: 101;  
-            position: relative;
-                
+            position: relative;       
         }
 
         /* 设置current-city鼠标移入的效果 */
         .location:hover .current-city{
             background-color: white;
             border: 1px solid rgb(204, 204, 204);
-            padding-bottom: 1px; 
+            /* padding-bottom: 1px;  */
 
             border-bottom: none;
             
