@@ -9,6 +9,9 @@
         html{
             perspective: 800px;
         }
+        body{
+            background-color: slategray;
+        }
         .cube{
             width: 200px;
             height: 200px;
@@ -57,11 +60,11 @@
 
         @keyframes rotate {
             from{
-                transform: rotateX(0) rotateZ(0);
+                transform: rotateX(0) rotateY(0) rotateZ(0);
             }
 
             to{
-                transform: rotateX(360deg) rotateZ(360deg);
+                transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
             }
         }
     </style>

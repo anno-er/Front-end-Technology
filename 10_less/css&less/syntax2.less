@@ -1,0 +1,83 @@
+.box1{
+    .box2{
+        color: red;
+    }
+    >.box3{
+        &:hover{
+            color: salmon;
+        }
+        color: red;
+    }
+
+    //为box1设置hover  &符表示外层的父元素 ，在这里表示box1
+    &:hover{
+        color: sandybrown;
+    }
+}
+
+.p1{
+    width: 100px;
+    height: 200px;
+}
+
+
+//extend 对当前的选择器扩展指定选择器的样式（选择器分组）
+.p2:extend(.p1){
+    color: seagreen;
+}
+
+.p3{
+    //直接对指定的样式进行引用，相当于对p1的样式进行复制
+    //mixin 混合
+    .p1();
+}
+
+//使用选择器时可以在选择器后边添加一个括号，实际上我们就创建了一个mixins
+//p4专门给别人用的
+.p4(){
+    width: 100px;
+    height: 100px;
+    background-color: silver;
+}
+
+.p5{
+    .p4;
+}
+
+//混合函数 在混合函数中可以进行传参
+
+.test(@w:100px,@h:200px,@bdc:red){
+    width: @w;
+    height: @h;
+    border: 1px @bdc solid;
+}
+
+div{
+    //调用混合函数 按顺序传递参数
+    .test(100px,200px,#bfa);
+}
+
+div{
+    .test(@bdc:red,@w:100px,@h:200px);
+}
+
+//average函数
+span{
+    color: average(red,yellow);
+}
+
+
+//darken函数 颜色加深
+html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    width: 100%;
+    height: 100%;
+    background-color: beige;
+}
+
+body:hover{
+    background-color: darken(beige,20%);
+}

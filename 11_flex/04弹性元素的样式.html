@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        ul{
+            width: 800px;
+            border: 10px red solid;
+            /* 设置ul为弹性容器   */
+            display: flex;
+    
+        }
+        li{
+            width: 200px;
+            height: 100px;           
+            font-size: 50px;
+            text-align: center;
+            line-height: 100px;
+            flex-shrink: 0;
+
+            /* 
+                弹性增长系数： flex-grow     
+            */
+            /* flex-grow: 1; */
+
+            /* 
+                弹性元素的缩减系数  flex-shrink
+                  计算方式比较复杂
+                  缩减多少是根据缩减系数和与元素大小来计算
+            */
+            flex-shrink: 1;
+
+            /* 
+                元素的基础长度  flex-basis
+                    指定元素在主轴上的基础长度
+                        如果主轴是横向的， 则该值指定元素宽度
+                        如果主轴是纵向的， 则该值指定元素高度
+                        -默认值是auto,表示参考元素自身的高度或宽度
+                        -如果传递了一个具体的数字，则以该值为准
+            */
+            flex-basis: 100px;
+
+
+            /* 
+                简写属性flex 可以设置弹性元素所有的三个样式
+                    语法：flex 增长 缩减 基础；
+                      固定值：
+                       initial: 0 1 auto；
+                       auto:    1 1 auto;
+                       none:    0 0 auto;  元素没有弹性
+
+
+            */
+            flex: initial;
+        }
+
+        li:nth-child(1){
+            background-color: #bfa;
+            /* order 决定弹性元素的排雷顺序 */
+            order: 3;
+        }
+        li:nth-child(2){
+            background-color: chocolate;
+            order: 2;
+        }
+        li:nth-child(3){
+            background-color: crimson;
+            order: 1;
+        }
+    </style>
+</head>
+<body>
+
+     <ul>
+         <li>1</li>
+         <li>2</li>
+         <li>3</li>
+     </ul>
+</body>
+</html>

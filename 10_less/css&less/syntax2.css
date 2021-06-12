@@ -1,0 +1,54 @@
+.box1 .box2 {
+  color: red;
+}
+.box1 > .box3 {
+  color: red;
+}
+.box1 > .box3:hover {
+  color: salmon;
+}
+.box1:hover {
+  color: sandybrown;
+}
+.p1,
+.p2 {
+  width: 100px;
+  height: 200px;
+}
+.p2 {
+  color: seagreen;
+}
+.p3 {
+  width: 100px;
+  height: 200px;
+}
+.p5 {
+  width: 100px;
+  height: 100px;
+  background-color: silver;
+}
+div {
+  width: 100px;
+  height: 200px;
+  border: 1px #bfa solid;
+}
+div {
+  width: 100px;
+  height: 200px;
+  border: 1px red solid;
+}
+span {
+  color: #ff8000;
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background-color: beige;
+}
+body:hover {
+  background-color: #dede8d;
+}
