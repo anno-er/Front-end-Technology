@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 设置视口大小 device-width表示设备的完美视口-->
+    <!-- <meta name="viewport" content="width=device-width"> -->
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        移动端默认的视口大小是980pxcss像素
+         默认情况，移动端的像素比就是 980/移动端宽度大小  （如iphone为980/750）
+         如果我们直接在网页中直接编写移动代码，这样在980视口下，像素比是非常不友好的，导致网页中的内容非常小
+        在编写移动端页面时，必须要确保有一个合理的像素比
+            比如1个css像素对应2个或者3个物理像素
+
+        我们可以通过meta标签来设置视口大小
+        
+        每一款移动设备在设计时，都会有最佳像素比，我们只需参照其进行设置
+          如iphone6为1:2 则视口大小应设置为375px
+          将像素比设置为最佳像素比大小称其为完美视口
+
+        将网页的视口设置为完美视口（写移动端页面时，必须写上）
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     -->
+    <div class="box1"></div>
+</body>
+</html>

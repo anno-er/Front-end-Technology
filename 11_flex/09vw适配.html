@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            /* 
+                网页中，字体大小最小是12px，
+                如果我们设置了一个小于12px(0除外)的字体，则字体自动设置为12px
+                0.1333333333vw= 1px
+                1.3333333333vw=10px
+                13.333333333vw=100px
+            */
+            font-size: 1.3333333333333vw;
+        }
+        .box1{
+            /* 
+                em：1em等于1个字体大小
+                rem:1rem等于1html的字体大小
+            */
+            width: 48rem;
+            height: 35rem;
+            background-color: coral;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        48 * 35
+     -->
+
+     <div class="box1"></div>
+</body>
+</html>

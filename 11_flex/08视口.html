@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            width: 6.4vw;
+            height: 4.667vw;
+            background-color: coral;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- 
+        不同的设备完美视口的大小是不一样的
+            iPhone6 --- 375px
+            iphone6plus --- 414px
+        
+            由于不同设备的视口和像素比不同，同样的375个像素，在不同的设备中有不同的显示效果
+             如375px 在iPhone6中满屏，而到了plus中则缺一块
+
+            所以在移动端开发时，就不能再使用px来布局
+
+            vw是一个css单位， 表示视口的宽度（viewport）
+              100vw = 一个视口的宽度
+              1vw = 1/100 宽度
+              vw永远相对于视口进行计算
+
+
+              常见的移动端设计图宽度为 750px 或者 1125px
+              
+              我们使用vw作为单位
+
+                如果要创建设计图中一个 48px * 35px 大小的像素
+                此时100vw = 750px(设计图中的像素) 0.13333333vw = 1px
+                6.4vw = 48px
+                4.667vw = 35px
+     -->
+     <div class="box1"></div>
+</body>
+</html>
