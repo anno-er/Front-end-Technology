@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            将其他类型转换为Boolean：使用Boolean()函数
+             - 数字-->布尔
+             正数：true
+             负数：true
+             0：false
+             Infinity：true
+             Nan: false
+
+             - 字符串-->布尔
+             除了空串，其余都是true
+
+             -null 为 false
+             -undefined 为false
+
+             
+        */
+        var a = 123;
+        var b = Boolean(a);
+        console.log(typeof b);
+        console.log(b);
+
+        a = "hello";
+        var c = Boolean(a);
+        console.log(typeof c);
+        console.log(c);
+
+        a = null;
+        var d = Boolean(a);//false
+        console.log(typeof d);
+        console.log(d);
+
+        a = undefined;
+        var e = Boolean(a);
+        console.log(typeof e);
+        console.log(e);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

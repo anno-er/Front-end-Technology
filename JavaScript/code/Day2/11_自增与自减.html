@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            ++  自增：变量在自身的基础上增加1
+              对变量自增以后，原变量会立即随之改变；
+              a++ 后置++  先进行表达式运算，在进行++
+              ++a 前置++  先自增，再进行表达式运算
+
+            --  自减：变量在自身的基础上减小1
+              a-- 后置--
+              --a 前置--
+        */
+
+        var a = 1;
+        console.log("a++ = " + a++);
+        a = 1;
+        console.log("++a = " + ++a);
+        a = 1;
+        var b = a++ + ++a + a;
+        console.log("b = " + b);
+
+        var c = 10;
+        console.log("a-- = " + a--);
+        c = 10;
+        console.log("--a = " + --a);
+        
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

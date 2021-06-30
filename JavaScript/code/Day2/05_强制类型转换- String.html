@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+        强制类型转换
+            将一个数据类型强制转换为其他的类型
+            类型转换主要指将其他的数据类型转换为String Number Boolean
+        */
+
+       /* 
+            将其他类型转换为String
+            方法一：调用转换数据类型toString()方法,该方法不会影响到原变量
+                局限性：不能转换null和undefined，如果强行调用，会报错
+            
+            方法二：调用String()函数，并传参；该方法不会影响原变量
+                没有方法一的局限性
+                
+
+
+       */
+       var a = 123;
+       var b = a.toString(); //方法一
+       var c = String(a); //方法二
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
