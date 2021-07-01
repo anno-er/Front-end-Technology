@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /* 
+            流程控制语句 
+              - JS中的程序是从上到下一行一行执行的
+              - 通过流程控制语句可以控制程序的执行流程
+                    使得程序可以根据一定的条件来选择执行
+              - 语句的分类：
+                  1. 条件判断语句
+                  2. 条件分支语句
+                  3. 循环语句
+        */
+
+        /* 
+            条件判断语句：
+              - 使用条件判断语句可以在执行某个语句之前进行判断，
+                如果条件成立才会执行语句，条件不成立则语句不执行
+            - if语句
+            - 语法一：
+                if(条件表达式)
+                    语句
+                else
+                    语句
+
+        */
+        var a = 10;
+        if (a > 10){
+            alert("a比10大");
+            alert("a比10大 +1")
+        }
+        else if(a>=10 && a<20){
+            alert("a大于等于10并且小于20");
+        }
+        else{
+            alert("a大于等于20");
+        }
+
+
+        var age = 60;
+        if(age > 100){
+            alert("活着挺没意思");
+        }
+        else if(age > 80){
+            alert("活到这个岁数不容易");
+        }
+        else if(age > 60){
+            alert("退休了");
+        }
+        else{
+            alert("革命尚未成功，同志仍须努力");
+        }
+            
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

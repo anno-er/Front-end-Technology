@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            JS中为我们提供了三种逻辑运算符
+            ! 非
+              - 可以对一个值进行非运算，对布尔值进行取反操作，
+              若对非布尔值进行运算，则会先将其转换为布尔值，再进行取反
+
+            && 与 
+              - 对符号两侧的值进行与运算   
+              - JS中的 与 属于短路的 与 ，如果第一个值为false，则不会看第二个值
+
+            || 或
+              - 对符号两侧的值进行或运算
+              - JS中的 或 属于短路的 或 ，如果第一个值为true,则不会检查第二个值
+        */
+    //    var a = true;
+    //    a = !a;
+    //    console.log("a = " + a);
+
+    //    var b = 10;
+    //    b = !b;
+
+    //    console.log("b = "+ b);
+    //    console.log(typeof b);   
+
+    // var result = true && true;
+    // var result = true && false;
+    // var result = false && true;
+    // var result = false && false;
+    // console.log("result = " + result);
+         
+    // true && alert("（true）JS中短路的 与 ");
+    // false && alert("（false）JS中短路的 与 ");
+
+
+    var result = true || true;
+    var result = true || false;
+    var result = false || true;
+    var result = false || false;
+    console.log("result = " + result);
+         
+    true && alert("（true）JS中短路的 或 ");
+    false && alert("（false）JS中短路的 或 ");
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

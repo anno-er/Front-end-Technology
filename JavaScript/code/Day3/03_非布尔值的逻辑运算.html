@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            && || ! 非布尔值
+            对于非布尔值进行 与 或 运算时，会将其先转换为布尔值，然后再运算，并且返回原值
+        
+        */
+
+        
+        /*
+            与运算：
+                    如果第一个为true,则返回第二个值（原值）
+                    如果第一个值为false，则返回第一个值（原值）
+        */
+
+        var result = 1 && 2;
+
+        result = 0 && 2;
+        result = 2 && 0;
+
+        result = NaN && 0;
+        result = 0 && NaN;
+
+        /*
+            或运算：
+                    如果第一个为true,则必然返回第一个值（原值）
+                    如果第一个值为false，则直接返回第二个值（原值）
+        */
+       result = 1 || 2;
+
+       result = 0 || 2;
+       result = 2 || 0;
+
+       result = NaN || 0;
+       result = 0 || NaN;
+
+       result = "" || "hello";
+       result = -1 || "你好";
+
+    </script>
+
+</head>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /* 
+            , 运算符可以分割多个语句，一般在声明多个变量时可以使用
+
+        */
+        //使用,运算符同时声明多个变量并赋值
+
+        var a = 1, b = 2, c = 3;
+        alert(b);
+
+        /* 
+             JS运算符的优先级:
+             在JS中有一个运算符优先表，越靠上优先级越高，优先级相同时，从左往右算
+ 
+             无需记忆这个表
+             如果遇到优先级无法确定的，使用括号改变优先级
+         
+        */
+        var result = 1 + 2 * 3;
+
+        result = 1 || 2 && 3; //如果 || 优先级高或者两个一样高 则result为3
+                            //如果 && 优先级高 则result为1
+
+        result = (1 || 2) && 3;
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
