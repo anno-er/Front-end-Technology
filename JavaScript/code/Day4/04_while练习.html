@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            * 假如投资的年利率为5%，试求从1000块增长到5000块，需要花费多少年
+            *
+            * 1000 1000*1.05
+            * 1050 1050*1.05
+        */
+        var a = 1000;
+        var year = 0;
+        while(a<=5000){
+            a = a * 1.05;
+            year++;
+        }
+
+        console.log("year is " + year);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

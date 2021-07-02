@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>if练习1</title>
+	<script type="text/javascript">
+
+		var score;
+		//判断分数是否合法 将prompt放入循环中
+		while (true) {
+			score = prompt("请输入小明的期末成绩:");
+			if (score >= 0 && score <= 100 ) {
+				break;
+			}
+			else{
+				alert("输入错误，请重新输入有效分数~~");
+			}
+		}
+
+
+		if (score == 100) {
+			alert("奖励一辆BMW");
+		}
+		else if (score >= 80) {
+			alert("奖励一台IPhone15s");
+		}
+		else if (score >= 60) {
+			alert("奖励一本参考书");
+		}
+		else {
+			alert("父见子未亡，抽出七匹狼");
+		}
+
+
+
+
+
+
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>
