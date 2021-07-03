@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //打印九九乘法表
+        var i, j;
+
+        // for (i = 1; i <= 9; i++) {
+        //     for (j = 1; j <= i; j++) {
+        //         document.write(i + "x" + j + " = " + i * j + "&nbsp&nbsp&nbsp");
+        //     }
+        //     document.write("<br><br>")
+        // }
+
+        var flag = true;
+
+        //打印出1-100之间的所有的质数
+        for (i = 2; i < 100; i++) {
+            for (j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            if(flag == true){
+                document.write(i + "&nbsp");
+
+            }
+            flag = true;
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
