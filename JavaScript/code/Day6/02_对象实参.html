@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        function isEven(num) {
+            return num % 2 == 0;
+        }
+
+        var result = isEven(2);
+        console.log(result);
+
+        /* 
+            定义一个函数，根据半径返回圆的面积
+        */
+
+        function cir_Area(rad) {
+            return 3.14 * Math.pow(rad, 2);
+        }
+        result = cir_Area(10);
+        console.log(result);
+
+        /* 
+            创建一个函数，可以在控制台中输出一个人的信息
+                可以输出name age gender address
+        */
+
+        function sayHello(name, age, gender, address) {
+            console.log("我叫" + name + "，" + age + "岁，" + gender + ",家住" + address);
+        }
+
+        sayHello("孙大圣", 48000, "男", "花果山");
+
+
+        /* 
+            实参可以是一个对象，当函数参数过多时，可以将一个参数封装称为一个对象
+        */
+        var person = {
+            name: "孙大圣",
+            age: 48000,
+            gender: "男",
+            address: "花果山"
+        }
+
+        function sayHello_1(o) {
+            console.log("我叫" + o.name + "，" + o.age + "岁，" + o.gender + ",家住" + o.address);
+        }
+        sayHello_1(person);
+
+        /* 
+            实参也可以是一个函数
+        */
+        function func(a){
+            //console.log("a = "+a);
+            a(person);
+        }
+        func(sayHello_1);
+
+        /* 
+            sayhello() 调用函数 ，使用函数的返回值
+            sayhello 函数对象 ， 相当于使用函数本身
+        
+        */
+
+
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

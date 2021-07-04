@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        var obj = {
+            name:"孙大圣",
+            age:48000,
+            gender:"男",
+            address:"花果山"
+        }
+
+        /* 
+            通过枚举获取对象中的所有属性
+            使用for...in 语句
+            语法
+                for(var 变量 in 对象){
+
+                }
+            对象中有几个属性，循环就会执行多少次 ，每次执行时，会将对象中
+            的一个属性的名字赋值给变量,可以用[]使用变量，即通过[n]，取出属性的值
+
+        */
+        
+        for(var n in obj){
+            console.log("属性名："+n);
+            console.log("属性值："+obj[n]);
+        }   
+
+        for(var n in document){
+            console.log(n);
+        }
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

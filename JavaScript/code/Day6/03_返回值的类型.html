@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function fun(){
+            alert("函数要执行了");
+
+            for(var i = 0;i < 5;i++){
+                
+                if(i==2){
+                    //使用break退出当前循环
+                    //break;
+
+                    //continue跳过当次循环
+                    //continue
+
+                    //使用return结束整个函数
+                    return;
+                }
+                console.log(i);
+            }
+            alert("函数执行完毕");
+        }
+        fun();
+
+        /* 
+            返回值可以是任意的类型
+            可以是一个对象
+            可以是一个函数
+        */
+        function fun2(){
+            var obj = {name:"沙老三"}
+            return obj;
+        }
+        var a = fun2();
+        console.log(a.name);
+
+        function fun3(){
+            function fun4(){
+                alert("this is fun4 AKA");
+            }
+            return fun4; //将函数对象fun4作为返回值返回
+        }
+
+        a = fun3(); //这里a为fun4；
+        console.log(a);
+        //a();
+        fun3()(); //相当于fun4(),
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
