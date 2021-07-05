@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //创建一个数组
+        var arr = ["孙大圣","猪二哥","沙老三"];
+
+        /* 
+            数组的方法
+                1.push 想数组中的末尾添加一个或多个元素，并返回数组的新的长度
+                    可以把要添加的元素作为方法的参数,
+                
+                2.pop 删除并返回数组的最后一个元素
+
+                3.unshift 向数组的开头一个或多个元素，并返回数组的新的长度
+                    可以把要添加的元素作为方法的参数,向前边插入元素以后，
+                    其他元素的索引会以此调整
+
+                4.shift s删除并返回数组的第一个元素
+        */
+       var result = arr.push("唐僧","蜘蛛精","白骨精","黑熊精");
+       console.log(arr);
+       console.log("result = "+result);
+        
+       result = arr.pop();
+       console.log(arr);
+       console.log("result = "+result);
+
+       result = arr.unshift("牛夫人","红孩儿");
+       console.log(arr);
+       console.log("result = "+result);
+
+       result = arr.shift();
+       console.log(arr);
+       console.log("result = "+result);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

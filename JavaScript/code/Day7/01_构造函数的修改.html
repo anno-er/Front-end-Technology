@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /* 
+            创建一个Person的构造函数
+             - 在Person的构造函数中，为每一个 对象都添加了一个sayHello方法，
+                    目前我们的方法是在构造函数内部创建的，
+                        也就是构造函数每执行一次就会创建一个新的sayHello方法
+                        所有实例的sayHello都是唯一的
+                    这样就导致了执行一次就会创建一个新的方法，
+                        大量相同的方法导致性能低下，因此完全没必要创建多个一模一样的
+                        方法，可以共享一个，将sayName在全局作用域中定义
+
+         */
+
+        //将sayName在全局作用域中定义
+        /* 
+            将函数定义在全局作用域中，污染了全局作用域的命名空间
+            而且定义在全局作用域中也很不安全，容易被覆盖
+        */
+        // function fun(){
+        //     alert("Hello大家好，我是"+this.name);
+        // }
+
+        function Person(name, age, gender) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            //向对象中添加方法
+            //this.sayHello = fun;
+        }
+
+        //向原型中添加sayHello方法
+        Person.prototype.sayHello = function fun() {
+            alert("Hello大家好，我是" + this.name);
+        }
+
+        //创建Person的实例
+        var per1 = new Person("孙大圣", 18, "男");
+        var per2 = new Person("猪八戒", 28, "男");
+        per1.sayHello();
+        per2.sayHello();
+
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
