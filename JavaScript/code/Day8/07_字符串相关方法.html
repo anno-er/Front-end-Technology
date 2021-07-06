@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        //创建一个字符串
+
+        var str = "Hello Atguigu";
+        /* 
+            在底层，字符串是以字符数组的形式保存的
+            ["H","e","l",.....]
+        */
+        console.log(str[1]);
+
+        /* 
+            length属性，获取字符串长度
+        */
+        console.log(str.length);
+        /*
+            charAt() 可以返回字符串中指定位置的字符，根据索引获取指定字符，相当于[]
+                        不会对原字符串产生影响（下面基本上都不会产生影响）
+        */
+        var result = str.charAt(0);
+        console.log("result = " + result);
+
+        /* 
+            charCodeAt() 可以返回字符串中指定位置的字符的unicode编码
+        */
+        result = str.charCodeAt();
+        console.log("result = " + result);
+
+        /*
+            fromCharCode() 根据字符编码获取字符
+        */
+        result = String.fromCharCode(72);
+        console.log("result = " + result);
+
+        /* 
+            concat 连接字符串 和 + 作用差不多
+        */
+        result = str.concat("你好", "再nima的见");
+
+        /* 
+            indexOf() 检索一个字符串中是否含有指定内容,有的话返回第一次出现的索引
+                                                    没有则返回-1
+                        可以指定第二个参数x，表示从开始查找的位置
+        */
+        str = "hello atguigu";
+        result = str.indexOf("h");
+        console.log("result = " + result);
+
+        result = str.indexOf("h", 2);
+        console.log("result = " + result);
+
+        /* 
+           lastIndexOf()  从后往前找，第一次出现指定内容的索引,也可以指定第二个参数
+                           找不到也返回-1
+        */
+        result = str.lastIndexOf("h");
+        console.log("result = " + result);
+        result = str.lastIndexOf("h", 5);
+        console.log("result = " + result);
+
+        /* 
+            slice() 从字符串中截取指定的内容 ，不会影响原字符串
+                第一个参数 表示截取的开始位置（包括）
+                第二个参数 表示截取的结束位置 （不包括） 可省略，省略时截取后面全部
+                                                      可为负数 ，从后面计算
+        */
+       str = "abcdefghijk";
+       result = str.slice(0,2);
+       console.log("result = " + result);
+       result = str.slice(2,-3);
+       console.log("result = " + result);
+
+       /* 
+            subString() 用于截取字符串，类似于slice
+                第一个参数 表示截取的开始位置（包括）
+                第二个参数 表示截取的结束位置 （不包括）可省略，省略时截取后面全部
+                不同于slice的是，这个方法不能接收负值，如果接收了一个负值，则默认为负值
+                而且他会自动调整参数的位置，如果第二个参数小于第一个，则自动交换 （slice不会）
+       */
+       result = str.substring(1,2);
+       console.log("result = " + result);
+
+       /* 
+            subStr() //不推荐使用 也适用于截取字符串 
+                第一个参数 表示截取的开始位置（包括）
+                第二个参数 表示截取的长度
+            
+       */
+        result = str.substr(2,2);
+        console.log("result = " + result);
+
+        /* 
+            split() 将一个字符串拆分为一个数组
+                参数 ：需要一个字符串作为拆分标识 
+
+                如果传递一个空串作为参数， 则会拆分每个数组
+                会影响原字符串
+        */
+       str = "abc,bcd,efg,hij";
+       result = str.split(",");
+       console.log("result = " + result);
+       console.log(Array.isArray(result));
+       console.log(result[2]);
+
+       /* 
+            toUpperCase()  全部转大写
+            toLowerCase() 全部转小写
+       */
+       
+       result = str.toUpperCase();
+       console.log("result = " + result);
+       result = str.toLowerCase();
+       console.log("result = " + result);
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

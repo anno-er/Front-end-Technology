@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /* 
+            concat 可以连接两个或多个数组，并将新的数组返回
+                -该方法不会对原数组产生影响
+        */
+        var arr1 = ["孙大圣", "猪二哥", "沙老三"];
+        var arr2 = ["宋江", "花荣", "阮小顺"];
+        var arr3 = ["吕布", "诸葛亮", "关二爷"];
+        var result = arr1.concat(arr2);
+        console.log(result);
+
+        result = arr1.concat(arr2, arr3);
+        console.log(result);
+
+        result = arr1.concat(arr2, arr3, "林妹妹", "土行孙");
+        console.log(result);
+
+        /* 
+            join() 将数组转换成一个字符串
+                -该方法不会对原数组产生影响，将转后的字符串返回
+                -在join()中，可以指定一个字符串作为参数,这个字符串会成为数组元素中的连接符
+                    如果不指定，默认为逗号 
+        */
+        result = arr1.join();
+        console.log(result);
+        console.log(typeof result);
+        result = arr2.join("@_@");
+        console.log(result);
+
+        /*
+            reverse() 反转数组
+                -该方法会影响原数组
+        */
+        arr1.reverse();
+        console.log(arr1);
+
+        /* 
+            sort() 对数组的元素进行排序
+                -该方法会影响原数组，默认会按照unicode编码从小到大进行排序
+                -对于纯数字的数组，使用sort进行排序时，也会按照unico编码进行排序
+                    因此会出现错误，我们可以在sort中添加一个回调函数，自己指定排序的规则
+                        回调函数中需要定义两个形参，浏览器会自动使用数组中元素作为实参
+                        使用那个元素调用它不确定，但是数组中a一定在b前面
+                    浏览器会根据回调函数的返回值来决定元素的顺序
+                        如果返回一个小于0的值 元素会交换位置
+                        如果返回一个大于0的值 元素位置不变
+                        如果返回一个等于0的值 认为两元素相等
+
+                        极其煞笔，全tm是错的 不用记得这么多，直接return a-b 升序 
+                                                          return b-a 降序                   
+        */
+        arr1 = ["d", "e", "b", "a", "c"];
+        arr1.sort();
+        console.log(arr1);
+
+        arr1 = [5,7,3,4,11,2];
+        arr1.sort();
+        console.log(arr1);
+
+        arr1 = [5,4,5,8,3,86,4,1,2];
+        arr1.sort(function(a,b){
+            return a-b;//升序
+            return b-a;//降序
+
+        })
+        console.log(arr1);
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
