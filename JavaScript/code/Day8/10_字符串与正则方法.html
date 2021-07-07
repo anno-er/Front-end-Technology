@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        var str = "1a2b3c4d5e6f";
+        /* 
+            split()
+                -将字符串拆分为数组
+                -方法中可以传递一个正则表达式作为参数，会根据正则表达式拆分字符串
+                split 即使不指定全局匹配，也会全局匹配
+        */
+        var result = str.split("c");
+        console.log("result = " + result);
+
+        /* 
+            根据任意字母将字符串拆分      
+        */
+        str = "1a2b3c4d5e6f";
+        result = str.split(/[A-z]/);
+        console.log("result = " + result);
+
+        /* 
+            search() 搜索字符串中是否含有指定内容
+                -如果搜索到指定内容，返回第一次出现的索引，没有则返回-1
+                -接收一个正则表达式的作为参数，根据正则表达式去检索字符串
+            search只会查找第一个，即使设置了全局匹配也没有
+        */
+        str = "hello abc hello abc aec afc";
+        result = str.search("abc");
+        console.log("result = " + result);
+
+        //搜索字符串中是否含有abc 或者 aec 或者 afc
+        result = str.search(/a[bef]c/);
+        console.log("result = " + result);
+
+
+        /* 
+            match() 找到一个或者多个正值表达式匹配的内容，并提取出来
+                默认情况下我们的match只会找到第一个符合要求的内容，找到以后就停止
+                我们可以设置正则表达式为全局匹配，这样就会匹配所有的内容
+                可以为一个正则表达式设置多个匹配模式，且顺序无所谓
+                match()会将匹配到的内容封装到数组中返回，即使只查询到一个结果
+        */
+        str = "1a2b3c4d5e6f";
+        result = str.match(/[A-z]/);
+        console.log("result = " + result);
+
+        result = str.match(/[A-z]/g);
+        console.log("result = " + result);
+
+        str = "1a2b3c4d5e6f7A8B9C";
+        result = str.match(/[A-z]/gi);
+        console.log("result = " + result);
+        console.log(Array.isArray(result));
+
+        /* 
+            replace()替换 
+                -将字符串中的指定内容替换新内容
+                参数：
+                    1.被替换的内容，可以接受一个正则表达式作为参数
+                    2.新的内容
+                默认只会替换第一个
+        */
+
+        result = str.replace("a","@_@");
+        console.log("result = " + result);
+
+        result = str.replace(/a/gi,"@_@");
+        console.log("result = " + result);
+
+        result = str.replace(/[a-z]/gi,"");
+        console.log("result = " + result);
+
+
+
+        
+        
+
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
