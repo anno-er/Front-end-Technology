@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            事件：就是文档或浏览器窗口中发生的一些特定的交互瞬间
+
+            JS与HTML之间的交互是通过事件实现的
+
+            对于Web应用来说，有下面这些代表性的事件：
+             点击某个元素，将鼠标移动至某个元素上方，按下键盘上的某个键等等
+        */
+
+    </script>
+
+    <style>
+        button {
+            display: block;
+            margin: 20px auto;
+            height: 80px;
+            width: 240px;
+            font-size: 25px;
+            background-color: aqua;
+            border: 1px solid #4a4a4a;
+            border-radius: 5px;
+            box-shadow: inset 2px 2px 5px 0px rgba(3, 3, 3, 0.3);
+        }
+    </style>
+
+</head>
+
+<body>
+    <button id="btn">This is a button</button>
+    <!-- 
+        我们可以在事件对应的属性中设置一些JS代码，
+        这样当事件被触发时，这些代买将会被执行
+
+        这种写法我们称为结构和行为耦合，不推荐使用
+     -->
+
+    <!--  -->
+    <script>
+        /* 
+            事件就是用户和浏览器之间的交互行为
+                比如点击按钮，鼠标移动 关闭窗口
+        */
+
+        var btn = document.getElementById("btn");
+        /*
+            可以为按钮的对应事件绑定处理函数的形式来响应事件
+            当事件被触发时，其对应的函数将会被调用
+        */
+       
+       //绑定一个单机事件，像这种为单机事件绑定的函数，我们称为单机响应函数
+       btn.onclick = function(){
+           alert("点什么呢？~~")
+       }
+
+       //绑定一个单机事件
+       btn.ondblclick = function(){
+           alert("双击666~~")
+       }
+
+
+
+    </script>
+</body>
+
+</html>

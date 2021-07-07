@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /* 
+            创建一个正则表达式检查一个字符串中是否含有"aaa"
+        */
+        var reg = /aaa/;
+        console.log(reg.test("aaacssc"));
+
+        /* 
+            量词：设置一个内容出现的次数]
+                {n} 出现n次
+                {m-n} 出现m-n次
+                {m,} 出现m次以上
+                +  至少一个   相当于{1,}
+                *  0个或多个 相当于{0,}
+                ?  表示0个或者1个 相当于{0-1};
+                量词只对全边一个内容起作用
+
+        */
+        reg = /a{34/; //a连续出现4次
+        console.log(reg.test("aaaacssc"));
+
+        reg = /(ab){3}/; //ab连续出现三次 ababab
+        console.log(reg.test("abababaacssc"));
+
+        reg = /ab{1,3}c/;
+        console.log(reg.test("abbc"));
+
+        reg = /ab+c/;
+        console.log(reg.test("abbc"));
+
+        reg = /ab*c/;
+        console.log(reg.test("abbc"));
+
+        reg = /ab?c/;
+        console.log(reg.test("abbc"));
+
+        /* 
+            检查一个字符串是否以a开头或结尾
+            ^ 表示结尾
+            $ 表示结尾
+        */
+        reg = /^a/; 
+        console.log(reg.test("abbc"));
+
+        reg = /a$/; 
+        console.log(reg.test("bbca"));
+
+        reg = /^a$/; //以a开头以a结尾，只能只有一个a,必须完全符合
+        console.log(reg.test("aaa"));//false 只能用一个
+
+
+        /* 
+            创建一个正则表达式，用于检查一个字符串是否是一个合法的手机号
+
+            手机号规则：
+                1、一共是11位
+                2、第一位以1开头
+                3、第二位只能是3-9
+                4、三位以后是任意数字，只能是数字 但只能有九个
+            ^1 [3-9] [0-9]{9}$
+        */
+       var phoneStr = "17805804654";
+       var phonereg = /^1[3-9][0-9]{9}$/;
+       console.log(phonereg.test(phoneStr));
+
+
+            
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
