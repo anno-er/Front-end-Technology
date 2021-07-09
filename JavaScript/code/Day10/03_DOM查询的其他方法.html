@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+
+            //获取body标签
+            var body = document.getElementsByTagName("body")[0];
+            console.log(body);
+
+            /* 
+                在document中有个属性就叫body,保存的是body的引用
+            */
+            body = document.body;
+            console.log(body);
+
+            /* 
+                document.documentElement保存html根标签
+            */
+            var html = document.documentElement;
+            console.log(html);
+
+            /* 
+                document.all 代表页面中的所有元素
+            */
+            var all = document.all;
+            console.log(all.length);
+            for (var i = 0; i < all.length; i++) {
+                console.log(all[i]);
+            }
+
+            /* 
+                根据元素的class属性值查询一组元素节点对象getElementsByClassName
+                    但这种方法只适合IE9以上的浏览器，兼容性不好
+            */
+            var boxs = document.getElementsByClassName("box1");
+            console.log(boxs.length);
+
+            //获取页面中的所有div
+            var divs = document.getElementsByTagName("div");
+            console.log(divs.length);
+
+            /* 
+                document.querySelector()
+                 需要一个选择器的字符串作为参数，可以根据一个css选择器来查询一个元素对象
+                 虽然IE8中没有getElementsByClassName(),但是可以使用querySelector代替
+                 使用该方法只会返回位移的一个元素，如果满足条件的元素有多个，那个么只会返回第一个
+
+            */
+            var div = document.querySelector(".box1 div");
+            console.log(div.innerHTML);
+
+            var divs = document.querySelector(".box1");
+            console.log(divs.innerHTML);
+
+            /* 
+                querySelectorAll,作用类似于querySelector，但能返回多个满足条件的元素
+                即使符合条件的元素只有一个，也会返回一个数组
+            */
+            divs = document.querySelectorAll(".box1");
+            console.log(divs.length);
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="box1">
+        我是第一个box1
+        <div>我是box1中的div</div>
+    </div>
+    <div class="box1">
+        我是第二个box1
+    </div>
+
+</body>
+
+</html>
