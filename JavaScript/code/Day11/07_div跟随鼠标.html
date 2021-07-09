@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            /* 
+                使div可以跟随鼠标移动
+            */
+            //获取box1
+            var box1 = document.getElementById("box1");
+            //绑定鼠标移动事件
+            document.onmousemove = function (event) {
+                //解决兼容问题
+                event = event || window.event;
+
+                //获取滚动条的滚动距离
+                /* 
+                    chrome认为浏览器的滚动条是body的
+                    火狐等浏览器认为浏览器的滚动条是html的
+                    需要解决兼容心问题
+                */
+
+                var st = document.body.scrollTop || document.documentElement.scrollTop;
+                var sl = document.body.scrollLeft || document.documentElement.scrollLeft;
+                console.log(st);
+                //获取鼠标的坐标
+                /* 
+                    clientX 和 clientY是获取鼠标在当前可见窗口中的坐标
+                    div的偏移量是相对于整个页面的
+                    pageX 和 pageY 相对于当前整个页面的坐标
+                        但是在IE8以下不支持，如果需要兼容IE8，则不能使用pageX
+                */
+                var left = event.clientX;
+                var top = event.clientY;
+
+                //设置div的坐标
+                box1.style.left = left + sl+ "px";
+                box1.style.top = top + st + "px";
+            }
+
+            var box2 = document.getElementById("box2");
+            
+            box2.onmousemove = function(event){
+                event = event || window.event;
+                event.cancelBubble = true;
+            }
+        }
+
+    </script>
+</head>
+
+<body style="height: 1000px;width: 2000px;">
+    <div id="box2" style="width: 200px;height: 200px;background-color: salmon;"></div>
+    <div id="box1"></div>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: crimson;
+            padding: 10px;
+            border: 5px solid salmon;
+
+            background-clip: content-box;
+        }
+
+        #box2{
+            padding: 100px;
+            background-color: sandybrown;
+            border: 5px solid salmon;
+            /* padding 不着色 */
+            background-clip: content-box; 
+        }
+
+        #box4{
+            width: 300px;
+            height: 300px;
+            background-color: skyblue;
+            overflow: auto;
+        }
+
+        #box5{
+            width: 600px;
+            height: 600px;
+            background-color: teal;
+
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            var box1 = document.getElementById("box1");
+            var btn01 = document.getElementById("btn01");
+
+            btn01.onclick = function () {
+                /* 
+                    clientHeight	返回元素的可见高度。
+                    clientWidth	    返回元素的可见宽度。
+                        这些属性返回的是一个数字，可以直接进行计算
+                        会获取元素的宽度，高度，包括内容区和内边距
+                        这些属性都是只读的，不能修改
+                */
+                console.log(box1.clientWidth);
+                console.log(box1.clientHeight);
+
+                /* 
+                    offsetHeight	返回元素的高度。
+                    offsetWidth	    返回元素的宽度。
+                        获取整个元素的宽度和高度，包括内容区，内边距和边框，返回的是一个数字
+
+                    offsetParent	返回元素的偏移容器。
+                        获取当前元素的定位父元素,他会获取到离当前元素最近的开启了
+                        定位的祖先元素，如果所有的祖先元素都没有开启定位，则返回body
+                        
+                    offsetTop	    返回元素相对于其定位元素的垂直偏移位置。
+                    offsetLeft	    返回元素相对于其定位元素的水平偏移位置。
+                */
+                console.log(box1.offsetWidth);
+                console.log(box1.offsetHeight);
+
+                console.log(box1.offsetParent);
+                
+                console.log(box1.offsetLeft);
+                console.log(box1.offsetTop);
+
+                /* 
+                    scrollHeight	返回元素的整体高度。
+                    scrollWidth	    返回元素的整体宽度。
+                        获取元素整个滚动（假如有）区域宽度和高度
+
+                    scrollLeft	    返回元素左边缘与视图之间的距离。
+                    scrollTop	    返回元素上边缘与视图之间的距离。
+                        获取滚动条滚动的距离
+
+                    //当满足scrollHeight - scollTop= clientHeight,说明水平滚动条滚动到底了
+                    //当满足scrollWidth - scollleft= clientWidth,说明水平滚动条滚动到底了
+
+                */
+                
+                var box4 = document.getElementById("box4");
+                console.log(box4.scrollHeight);
+                console.log(box4.scrollWidth);
+
+                console.log(box4.scrollLeft);
+                console.log(box4.scrollTop);
+
+                
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn01">按钮</button>
+    <br></br>
+    <!--  style="position: relative;" -->
+    <div id="box3">  
+        <div id="box2" style="position: relative;">
+            <div id="box1"></div>
+        </div>
+    </div>
+    <br></br><br></br><br></br>
+    <div id="box4">
+        <div id="box5"></div>
+    </div>
+    
+</body>
+
+</html>

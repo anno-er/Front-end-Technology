@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color:crimson;
+        }
+    </style>
+
+    <script>
+        window.onload = function(){
+            //点击按钮以后读取box1的样式
+            var box1 = document.getElementById("box1");
+            var btn01 = document.getElementById("btn01");
+            btn01.onclick = function(){
+                //读取box1的宽度
+                /* 
+                    获取元素当前显示的样式
+                    语法： 元素.currentStyle.样式名 
+                        可以读取当前元素正在显示的样式，如果没有设置样式，则获取默认值
+                        这种方法只支持ie浏览器
+                */
+               //alert(box1.currentStyle.width);
+
+               /* 
+                    在其他浏览器中何以使用getComputedStyle()这个方法来获取当前的样式
+                    这个方法时window的方法，可以直接使用
+                    参数
+                        1. 要获取的样式的元素
+                        2. 可以传递一个伪元素，一般都是null
+
+                        该方法会返回一个对象，对象中封装了当前元素的样式
+                            可以通过 对象.样式名 来获取样式，如果获取的样式
+                            没有设置，则会获取到真实的值，而不是默认值，
+                            比如没有设置width,他不会获取到auto,而是一个长度
+                        
+                        该方法不支持IE8及以下的浏览器
+                            
+               */
+
+               /* 
+                    通过currentStyle 和 getComputedStyle读取到的样式都是只读的
+                    不能修改，如果要修改则必须通过style属性
+               */
+                var obj = getComputedStyle(box1,null);
+                alert(obj.width);
+                alert(obj.backgroundColor);
+
+                alert(getStyle(box1,"width"));
+            };
+        };
+        /* 
+            定义一个函数用来获取指定元素当前样式
+            Parameter
+             @obj   要获取的样式
+             @name  要获取的样式名
+
+        */
+        function getStyle(obj,name){
+            //属性没有返回undefined
+            if(window.getComputedStyle){
+                return getComputedStyle(obj,null)[name];
+            } 
+            else if(obj.currentStyle){
+                return obj.currentStyle[name];
+            }
+            else{
+                alert("Missing Method");
+                return false;
+            }
+
+            //return window.getComputedStyle?getComputedStyle(obj,null)[name]:obj.currentStyle[name];
+        }
+
+    </script>
+
+</head>
+<body>
+    <button id="btn01" >按钮</button>
+    <br></br>
+    <div id="box1" style="width:200px"></div>
+</body>
+</html>
