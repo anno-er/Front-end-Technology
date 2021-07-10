@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        a {
+            text-decoration: none;
+            color: brown;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            /* 
+                点击按钮添加超链接
+            */
+            var u1 = document.getElementById("u1");
+            var btn01 = document.getElementById("btn01");
+            btn01.onclick = function () {
+                //创建一个li
+                var li = document.createElement("li");
+                li.innerHTML = "<a href='javascript:;' class='link'>link_new</a>";
+                u1.appendChild(li);
+            }
+
+            /* 
+                为每一个超链接都绑定单击响应函数
+                这种操作比较麻烦，并且只能为已有的超链接设置事件，新加的超链接必须重新绑定
+            */
+            // var allA = document.getElementsByTagName("a");
+            // for (var i = 0; i < allA.length; i++) {
+            //     allA[i].onclick = function () {
+            //         alert("li的单机响应函数");
+            //     }
+            // }
+
+            /* 
+                 我们希望只绑定一次事件即可应用到多个元素上，即使元素是后添加的
+                 事件的委派
+                    -将事件绑定给元素的共同的祖先元素，这样当后代元素上的事件触发时
+                        会一直冒泡到祖先元素，从而通过祖先元素的响应函数来处理事件
+                    -事件委派利用了冒泡，通过委派可以 减少事件绑定的次数，提高程序的性能
+            */
+            u1.onclick = function (event) {
+                event = event || window.event;
+                //如果触发事件的对象时期望的元素则执行，否则不执行
+                
+                /* 
+                    target 
+                     - event中的target是表示触发事件的对象
+                */
+                var reg = /\blink\b/;
+                if(reg.test(event.target.className)){
+                    alert("我是ul的单击响应函数")
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn01">按钮</button>
+    <ul id="u1">
+        <li><a href="javascript:;" class="link">link_1</a></li>
+        <li><a href="javascript:;" class="link">link_2</a></li>
+        <li><a href="javascript:;" class="link">link_3</a></li>
+        <li><a href="javascript:;" class="link">link_4</a></li>
+    </ul>
+</body>
+
+</html>

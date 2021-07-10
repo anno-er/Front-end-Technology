@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: indianred;
+            position: absolute;
+        }
+    </style>
+
+    <script>
+        /* 
+            使div可以根据不同的方向键向不同的方向移动 
+            左:37       上:38
+            右:39       下:40  
+
+        */
+        window.onload = function () {
+            var speed = 10;
+            document.onkeydown = function (event) {
+                event = event || window.event;
+                var box1 = document.getElementById("box1");
+                switch (event.keyCode) {
+                    case 37:
+                        box1.style.left = box1.offsetLeft - speed + "px";
+                        break;
+                    case 38:
+                        box1.style.top = box1.offsetTop - speed + "px";
+                        break;
+                    case 39:
+                        box1.style.left = box1.offsetLeft + speed + "px";
+                        break;
+                    case 40:
+                        box1.style.top = box1.offsetTop + speed + "px";
+                        break;
+                    default:
+                        break;
+                }
+                //当用户按了ctrl以后速度加快
+                if (event.ctrlKey) {
+                    if (speed <= 50) {
+                        speed += 10;
+                        alert("speed: "+speed);
+                    }
+                }
+            }
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+    <div id="box1"></div>
+</body>
+
+</html>
