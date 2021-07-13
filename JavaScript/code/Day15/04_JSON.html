@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./JS/json2.js"></script>
+    <script>
+        /* 
+            eval()
+                - 这个函数可以执行一段字符串形式的代码，并将执行结果返回
+                - 如果使用eval()执行的字符串中含有{},它会将{}当成代码块
+                    -如果不希望将其当成代码块执行，需要在字符串前后加上一个()
+                
+                这种方法能兼容IE7以下
+                其功能很强大，可以直接执行一个字符串中的js代码
+                    但是在开发中尽量少用，它执行性能较差，还具有安全隐患
+        */
+
+        /* 
+            如果需要兼容IE7及以下的JSON操作，可以引入一个外部文件来处理
+            
+        */
+        var str = "alert('hello');";
+        eval(str);
+
+        var json = '{"name":"孙大圣","age":18,"gender":"男"}';
+        var obj = eval("("+json+")");
+        console.log(obj);
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
