@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,14 +13,47 @@
                    含有某种子串、将匹配的子串替换或者从某个串中取出符合
                    某个条件的子串等。
                 
-                - 
+                - 邮件的规则
+                    1、前边可以是xxx
+                    2、跟着一个@
+                    3、后边可以是xxxx乱七八糟
+                    4、.com或者其他的后缀
                 
-                
-
+                - 正则表达式就是定义一些字符串的规则
+                    计算机可以割据正则表达式来检查一个字符串是否符合规则
+                    或者将字符串中符合规则的内容提取出来        
         */
+        //创建正则表达式的对象
+        /* 
+            语法：
+                var 变量 = new RegExp("正则表达式","匹配模式");
+                使用typeof检查正则对象，会返回object
+            
+                匹配模式参数：
+                    i:忽略大小写
+                    g:全局匹配模式
+         */
+
+        var reg = new RegExp("ab","i");//这个表示检查字符串中是否含有"a"，严格区分大小写
+        console.log(typeof reg);
+        /* 
+            正则表达式的测试方法
+                test()
+                    -使用这个方法可以检测一个字符串是否正则表达式的规则
+                     如果符合则返回true,否则返回false
+        */
+        var str = "a";
+        var result = reg.test(str);
+        console.log("result = "+result);
+        console.log(reg.test("ahdsavdasb"));
+
+
+
     </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>

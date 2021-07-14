@@ -40,7 +40,7 @@
         
 
 		areaDiv.onmousemove = function(event){
-            //解决时间对象浏览器兼容问题
+            //解决事件对象浏览器兼容问题
             event = event || window.event;
             /* 
                 clientX 返回当事件被触发时，鼠标指针的水平坐标。
@@ -49,8 +49,8 @@
                 在IE8中响应函数被触发时，浏览器不会传递事件参数
                  而是将事件对象作为window对象的属性保存的
             */
-			var x = window.event.clientX;
-			var y = window.event.clientY;
+			var x = event.clientX;
+			var y = event.clientY;
 
             //在showMsg中显示
 			showMsg.innerHTML = "x="+x+" y="+y;
