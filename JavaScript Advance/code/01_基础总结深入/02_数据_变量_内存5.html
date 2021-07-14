@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>02_内存管理</title>
+</head>
+<body>
+<!--
+问题: JS引擎如何管理内存?
+1. 内存生命周期
+  开辟空间，得到改内存空间的使用权
+  存储数据，可以对该数据反复进行操作
+  释放空间
+2. 释放内存
+    局部变量:函数执行哇利己自动释放
+    局部对象：函数执行完毕、自动释放成为垃圾对象 ===> 垃圾回收器回收
+-->
+<script type="text/javascript">
+  var a = 3;
+  var obj = {};
+  obj = null;
+
+  function fun(){
+    var b = {};
+  }
+  fun() //b是自动释放的，其所指向的对象是在后面的某个时刻由垃圾回收器回收
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>02_关于引用变量赋值问题</title>
+</head>
+
+<body>
+  <!--
+    关于引用变量赋值问题
+      多个引用变量内容中保存的地址值相同，因此指向了同一个对象，
+      通过一个变量修改对象内部数据，其他所有变量指向的对象也会改变
+
+      2个引用变量执行同一个同一个对象，让其中一个指向另一个对象，另一个仍旧指向原来的对象
+
+  -->
+  <script type="text/javascript">
+    var obj1 = { name: 'Tom' };
+    var obj2 = obj1;
+
+    obj1.name = 'jack';
+    console.log(obj2.name);
+
+    obj2.age = 12;
+    console.log(obj1.age);
+
+    function fun(obj) {
+      obj.name = 'Bob';
+    }
+    fun(obj1);
+    console.log(obj2.name);
+
+    var a = { age: 12 };
+    var b = a;
+    a = {name: 'bob',age:13};
+    console.log(b.name,b.age,a.name,a.age);//undefined 12 "bob" 13
+
+    function fun2(obj){
+      obj = {age:15}; //因为重新指向了，不会覆盖传入对象的age,同时obj这一对象会成为垃圾对象
+    }
+    fun2(a)
+    console.log(a.age); //13
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>02_关于数据传递问题</title>
+</head>
+<body>
+<!--
+问题: 在js调用函数时传递变量参数时, 是值传递还是引用传递
+  理解 1：都是值（基本值/地址值）传递
+  理解 2：可能时值传递，也有可能是引用传递（引用传递指的是传递的地址）
+-->
+<script type="text/javascript">
+  var a = 3;
+  function fun1(num){
+    num = num+1;
+  }
+  fun1(a);
+  console.log(a); //3 因为是按值传递的，会复制 ，不会影响a本身
+
+  function fun2(obj){  
+    console.log(obj.name);
+  }
+  var obj1 = {name:'Tom'};
+  fn2(obj1); //Tom  按引用传递，传递的是地址值
+  
+</script>
+</body>
+</html>
