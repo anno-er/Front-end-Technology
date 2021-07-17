@@ -1,18 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>05_回调函数</title>
 </head>
-<body>
-<button id="btn">测试点击事件</button>
-<!--
-1. 什么函数才是回调函数?
-2. 常见的回调函数?
--->
-<script type="text/javascript">
 
-</script>
+<body>
+  <button id="btn">测试点击事件</button>
+  <!--
+1. 什么函数才是回调函数?
+    1.自己定义的函数
+    2.不是通过自己调用的
+    3.最终执行了
+
+2. 常见的回调函数?
+    dom事件的回调函数 （实现与用户的交互）
+    定时器回调函数
+
+    （后续介绍）
+    ajax回调函数  （实现与后台交互）
+    生命周期回调函数
+-->
+  <script type="text/javascript">
+
+  /* 
+    dom事件的回调函数
+  */
+    var btn = document.getElementById("btn");
+    btn.onclick = function () {
+      alert(this.innerHTML);
+    }
+    //定时器
+    //超时定时器
+
+    /* 
+      定时器回调函数
+    */
+    setTimeout(function () {
+      alert("Time out");
+    }, 2000)
+
+
+  </script>
 
 </body>
+
 </html>
