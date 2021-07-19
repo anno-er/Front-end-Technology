@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>01_变量提升与函数提升</title>
 </head>
+
 <body>
-<!--
+  <!--
 1. 变量声明提升
   * 通过var定义(声明)的变量, 在定义语句之前就可以访问到
   * 值: undefined
@@ -14,8 +16,31 @@
   * 值: 函数定义(对象)
 3. 问题: 变量提升和函数提升是如何产生的?
 -->
-<script type="text/javascript">
+  <script type="text/javascript">
+    /* 
+      面试题
+    */
+    var a = 3
+    function fn() {
+      console.log(a)
+      var a = 4  //会提前声明 var a
+    }
+    fn() //输出undefined
 
-</script>
+    console.log(b) //能提前访问但值是 undefined ，称其为声明提升
+    fn2() //可以提前调用，称其为函数提升
+    fn3() //不可以提前调用， 因为其是以变量的形式提前声明的，这里是变量提升，而不是函数提升
+
+    var b = 3
+    function fn2() {
+      console.log('fn2')
+    }
+
+    var fn3 = function(){
+      console.log('fn3(')
+    }
+
+  </script>
 </body>
+
 </html>

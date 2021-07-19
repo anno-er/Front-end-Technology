@@ -11,6 +11,35 @@
 3. 方法一般定义在原型中, 属性一般通过构造函数定义在对象本身上
 -->
 <script type="text/javascript">
+  function Fn(){
+
+  }
+  //给Fn原型对象添加属性
+  Fn.prototype.a = 'xxx'
+  var fn1 = new Fn()
+  console.log(fn1.a)  //xxx
+
+  var fn2 = new Fn()
+  fn2.a = 'yyy'  //设置对象的属性值时: 不会查找原型链, 如果当前对象中没有此属性, 直接添加此属性并设置其值
+  console.log(fn2.a)  //yyy
+  console.log(fn1.a)  //xxx
+
+  function Person(name,age){
+    this.name = name
+    this.age =age
+  }
+  Person.prototype.setName = function(name){
+    this.name = name
+  }
+  var p1 = new Person('Tom',12)
+  p1.setName('Bob')
+  console.log(p1.name,p1.age,p1)
+
+  var p2 = new Person('Jack',18)
+  p1.setName('Rose')
+  console.log(p1.name,p1.age,p1)
+
+  console.log(p1.__Proto__ === p2.__Proto__) //true
 
 </script>
 </body>
