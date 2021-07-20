@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>04_作用域_面试题2</title>
 </head>
-<body>
-<script type="text/javascript">
 
-</script>
+<body>
+  <script type="text/javascript">
+    var fn = function () {
+      console.log(fn)  
+    }
+    fn()  //输出整个函数 fn
+    var obj = {
+      fn2: function () {
+        console.log(this.fn2) //无法找到 ，如果需要找到，应该设置为this.fn2
+      }
+    }
+    obj.fn2() //全局中无法访问局部变量
+  </script>
 </body>
+
 </html>

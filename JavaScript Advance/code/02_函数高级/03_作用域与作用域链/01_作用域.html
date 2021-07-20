@@ -17,7 +17,10 @@
   * 隔离变量，不同作用域下同名变量不会有冲突
 -->
 <script type="text/javascript">
-
+  if(true){
+    var c = 3
+  }
+  console.log(c)  //可以访问，没有块作用域
 </script>
 </body>
 </html>
