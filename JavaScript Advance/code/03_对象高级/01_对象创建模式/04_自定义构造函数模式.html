@@ -1,19 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>04_自定义构造函数模式</title>
 </head>
 
 <body>
-<!--
+  <!--
 方式四: 自定义构造函数模式
   * 套路: 自定义构造函数, 通过new创建对象
   * 适用场景: 需要创建多个类型确定的对象
-  * 问题: 每个对象都有相同的数据, 浪费内存
+  * 问题: 每个对象都有相同的数据, 浪费内存,可以将相同的数据放入原型数中去
 -->
-<script type="text/javascript">
+  <script type="text/javascript">
+    function Person(name, age) {
+      this.name = name
+      this.age = age
+      this.setName = function (name) {
+        this.name = name
+      }
+    }
+    var p1 = new Person('Tom', 12)
+    p1.setName('Jack')
+    console.log(p1.name, p1.age)
 
-</script>
+    function Student(name, salary) {
+      this.name = name
+      this.salary = salary
+      this.setName = function (name) {
+        this.name = name
+      }
+    }
+    var s1 = new Student('常东林',500000)
+    console.log(p1,s1)
+    
+
+    var p2 = new Person('Bob', 12)
+    console.log(p1,p2)
+  </script>
 </body>
+
 </html>

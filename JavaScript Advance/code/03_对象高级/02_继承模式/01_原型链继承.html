@@ -20,6 +20,38 @@
 -->
 <script type="text/javascript">
 
+  //父类型构造函数
+  function Supper(){
+    this.supProp = 'Supper property'
+  }
+
+  Supper.prototype.showSupperProp = function(){
+    console.log(this.supProp)
+  }
+
+  //子类型构造函数
+  function Sub(){
+    this.subProp = 'Sub Property'
+  }
+
+  //设置子类型的原型为父类型的一个实例对象
+  Sub.prototype = new Supper()
+  //让子类型的原型的constructor指向子类型
+  Sub.prototype.constructor = Sub
+
+  Sub.prototype.showSubProp = function(){
+    console.log(this.supProp)
+  }
+
+
+  var sub = new Sub()
+  sub.showSupperProp() //子类型能调用继承父类而来的方法
+
+  console.log(sub) //Supper ，原型对象是Supper
+
+
+
+
 </script>
 </body>
 </html>

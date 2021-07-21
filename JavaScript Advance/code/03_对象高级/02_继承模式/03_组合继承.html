@@ -1,17 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>03_组合继承</title>
 </head>
+
 <body>
-<!--
+  <!--
 方式3: 原型链+借用构造函数的组合继承
 1. 利用原型链实现对父类型对象的方法继承
 2. 利用call()借用父类型构建函数初始化相同属性
 -->
-<script type="text/javascript">
+  <script type="text/javascript">
+    function Person(name, age) {
+      this.name = name
+      this.age = age
+    }
+    Person.prototype.setName = function (name) {
+      this.name = name
+    }
 
-</script>
+    function Student(name, age, salary) {
+      Person.call(this, name, age) //能够访问父类的属性
+      this.salary = salary
+    }
+
+    //产生继承,能访问父类的方法
+    Student.prototype = new Person()
+    Student.prototype.constructor = Student //修正constructor属性的指向
+    Student.prototype.setSalary = function(salary){
+      this.salary = salary
+    }
+
+    var s = new Student('Tom',20,50000)
+    s.setName('Bob')
+    s.setSalary(56000)
+    console.log(s.name,s.age,s.salary)
+
+    
+  </script>
 </body>
+
 </html>

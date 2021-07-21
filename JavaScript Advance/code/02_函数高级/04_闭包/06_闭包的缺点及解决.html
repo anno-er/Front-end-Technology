@@ -14,6 +14,17 @@
   * 及时释放
 -->
 <script type="text/javascript">
+  function fn(){
+    var arr =new Array[10000]
+    function fn2(){
+      console.log(arr.length)
+    }
+    return fn2
+  }
+  var f = fn1
+  f() //这个函数执行完以后，闭包仍然存在，arr占用很大的空间，造成内存泄漏需要释放
+  f = null //让指向内部函数的变量成为垃圾对象 --> 回收闭包
+  
 </script>
 </body>
 </html>
