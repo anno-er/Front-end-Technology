@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>05_事件循环模型</title>
 </head>
+
 <body>
-<button id="btn">测试</button>
-<!--
+  <button id="btn">测试</button>
+  <!--
 1. 所有代码分类
   * 初始化执行代码(同步代码): 包含绑定dom事件监听, 设置定时器, 发送ajax请求的代码
   * 回调执行代码(异步代码): 处理回调逻辑
@@ -20,8 +22,23 @@
   * 当事件发生时, 管理模块会将回调函数及其数据添加到回调列队中
   * 只有当初始化代码执行完后(可能要一定时间), 才会遍历读取回调队列中的回调函数执行
 -->
-<script type="text/javascript">
+  <script type="text/javascript">
+    function fn1(){
+      console.log('fn1')
+    }
+    fn1()
+    document.getElementById('btn').onclick = function () {
+      console.log('点击了Btn')
+    }
+    setTimeout(function(){
+      console.log('定时器执行')
+    },2000)
 
-</script>
+    function fn2(){
+      console.log('fn2')
+    }
+    fn2()
+  </script>
 </body>
+
 </html>
