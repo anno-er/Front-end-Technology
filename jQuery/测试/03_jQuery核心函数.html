@@ -38,8 +38,8 @@
     //1.1 参数为函数 : 当DOM加载完成后，执行此回调函数
     $(function () {   //绑定文档加载完成的监听
       //1.2参数为选择器字符串: 查找所有匹配的标签, 并将它们封装成jQuery对象
-      var btn = $('#btn')
-      btn.click(function () {  //绑定点击事件监听
+      var $btn = $('#btn')
+      $btn.click(function () {  //绑定点击事件监听
         //this是什么？发生事件的DOM元素，就是当前绑定的button
         alert(this.innerHTML)
 

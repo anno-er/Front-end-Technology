@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>06_层次选择器</title>
+  <title>06_层次选择器</title> <!-- 查找子孙后代与兄弟 -->
 </head>
 
 <body>
@@ -11,7 +11,7 @@
   <li>AAAAA</li>
   <li class="box">CCCCC</li>
   <li title="hello"><span>BBBBB</span></li>
-  <li title="hello"><span>DDDD</span></li>
+  <li title="hello"><span class="box">DDDD</span></li>
   <span>EEEEE</span>
 </ul>
 
@@ -36,6 +36,20 @@
    3. 选中class为box的下一个li
    4. 选中ul下的class为box的元素后面的所有兄弟元素
    */
+
+  //  1. 选中ul下所有的的span
+  //$('ul span').css('background','yellow')
+
+  //  2. 选中ul下所有的子元素span
+  //$('ul>span').css('background','yellow')
+  
+  //  3. 选中class为box的下一个li
+  //$('.box+li').css('background','yellow')
+
+  //  4. 选中ul下的class为box的元素后面的所有兄弟元素
+  $('ul .box~*').css('background','yellow')
+
+
 </script>
 </body>
 </html>

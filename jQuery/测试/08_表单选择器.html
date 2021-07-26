@@ -11,7 +11,7 @@
   密 码: <input type="password"/><br>
   爱 好:
   <input type="checkbox" checked="checked"/>篮球
-  <input type="checkbox" checked="checked"/>足球
+  <input type="checkbox"/>足球
   <input type="checkbox" checked="checked"/>羽毛球 <br>
   性 别:
   <input type="radio" name="sex" value='male'/>男
@@ -38,6 +38,20 @@
    2. 显示选择爱好 的个数
    3. 显示选择的城市名称
    */
+  //  1. 选择不可用的文本输入框
+  //$(':input:disabled').css('background','red')
+
+  //  2. 显示选择爱好 的个数
+  console.log($(':checkbox:checked').length) 
+
+  //  3. 显示选择的城市名称
+  $(':submit').click(function(){
+    var city = $('select>option:selected').html() //得到选择的option的标签体文本
+    alert(city)
+    
+    alert($('select').val()) //得到选择的option的value值
+  })
+  
 </script>
 </body>
 </html>
