@@ -19,9 +19,36 @@
     }
   </style>
 </head>
+
 <body style="height: 2000px;">
 
-<div id="to_top">返回顶部</div>
+  <div id="to_top">返回顶部</div>
+
+  <script src="../../测试/js/jquery-1.10.1.js"></script>
+  <script>
+    $('#to_top').click(function () {
+      //瞬间滚动至顶部
+      //$('html,body').scrollTop(0)
+
+      var $page = $('html,body')
+      //缓慢平滑滚动至顶部
+      //总距离
+      var distance = $('html,body').scrollTop()
+      //总时间
+      var timeCost = 500
+      //间隔时间
+      var intervalTime = 50
+      var itemDistance = distance / (timeCost / intervalTime)
+      //使用循环定时器不断滚动，到达顶部停止定时器
+      var intervalId = setInterval(function () {
+        $page.scrollTop(distance -= itemDistance)
+        if($page.scrollTop()<=0){
+          $page.scrollTop = 0
+          clearInterval(intervalId)
+        }
+      }, intervalTime)
+    })
+  </script>
 
 </body>
 
