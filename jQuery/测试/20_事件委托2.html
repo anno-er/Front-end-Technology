@@ -34,8 +34,28 @@
   * 设置事件委托: $(parentSelector).delegate(childrenSelector, eventName, callback)
   * 移除事件委托: $(parentSelector).undelegate(eventName)
 -->
-<script src="js/jquery-1.10.1.js"></script>
+
+<script src="../测试/js/jquery-1.10.1.js"></script>
 <script>
+  /*
+   需求：
+   1. 点击 li 背景就会变为红色
+   2. 点击 btn1 就添加一个 li
+  */
+  // 1. 点击 li 背景就会变为红色
+  $('ul').delegate('li','click',function(){
+    //console.log(this)
+    this.style.background = 'red'
+  })
+  // 2. 点击 btn1 就添加一个 li
+  $('#btn1').click(function(){
+    $('ul').append('<li>new create li</li>')
+  })
+
+  //点击btn2移除事件委托
+  $('btn2').click(function(){
+    $('ul').undelegate('click')
+  })
 
 </script>
 </body>
