@@ -28,7 +28,7 @@
   * 委托方: 业主  li
   * 被委托方: 中介  ul
 3. 使用事件委托的好处
-  * 添加新的子元素, 自动有事件响应处理
+  * 添加新的子元素, 自动有事件响应处理，即为动态事件绑定
   * 减少事件监听的数量: n==>1
 4. jQuery的事件委托API
   * 设置事件委托: $(parentSelector).delegate(childrenSelector, eventName, callback)
@@ -43,7 +43,7 @@
    2. 点击 btn1 就添加一个 li
   */
   // 1. 点击 li 背景就会变为红色
-  $('ul').delegate('li','click',function(){
+  $('ul').delegate('li','click',function(){  //回调函数中的this是事件触发的子元素
     //console.log(this)
     this.style.background = 'red'
   })
