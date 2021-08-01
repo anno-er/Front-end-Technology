@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../laydate-v1.1/laydate/laydate.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 两种方式 -->
+
+    <input placeholder="请输入日期" class="laydate-icon" onclick="laydate()">
+
+    <input class="laydate-icon" id="demo" value="2014-6-25更新">
+
+    <script>
+        ; !function () {
+
+            //laydate.skin('molv');
+            laydate({
+                elem: '#demo'
+            })
+        }();
+
+    </script>
+    <br><br>
+
+    <div id="test1" class="laydate-icon"></div>
+    <script>
+        laydate({
+            elem: '#test1',
+            format: 'YYYY/MM',
+            festival:true,
+            choose:function(datas){
+                alert('得到:'+datas)
+            }
+        })
+    </script>
+
+    <div id="test2" class="laydate-icon"></div>
+    <script>
+        laydate({
+            elem:'#test2',
+            min:laydate.now(-2),
+            max:laydate.now(+2)
+        })
+    </script>
+
+
+
+</body>
+
+</html>

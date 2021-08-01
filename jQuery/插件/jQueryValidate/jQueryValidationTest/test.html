@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error{
+            color: red;
+        }
+    </style>
+</head>
+
+<!-- 
+    	required: "This field is required.",
+		remote: "Please fix this field.",
+		email: "Please enter a valid email address.",
+		url: "Please enter a valid URL.",
+		date: "Please enter a valid date.",
+		dateISO: "Please enter a valid date ( ISO ).",
+		number: "Please enter a valid number.",
+		digits: "Please enter only digits.",
+		equalTo: "Please enter the same value again.",
+		maxlength: $.validator.format( "Please enter no more than {0} characters." ),
+		minlength: $.validator.format( "Please enter at least {0} characters." ),
+		rangelength: $.validator.format( "Please enter a value between {0} and {1} characters long." ),
+		range: $.validator.format( "Please enter a value between {0} and {1}." ),
+		max: $.validator.format( "Please enter a value less than or equal to {0}." ),
+		min: $.validator.format( "Please enter a value greater than or equal to {0}." ),
+		step: $.validator.format( "Please enter a multiple of {0}." )
+ -->
+
+<body>
+    <form id="myForm" action="xxx">
+        <p>用户名(最小6位): <input name='username' type="text" required minlength="6"></p>
+        <p>密码（6-8位）: <input id='password' name="pwd1" type="password" required minlength="6" maxlength="8"></p>
+        <p>确认密码（与密码相同）: <input name="pwd2" type="password" equalTo="#password"></p>
+        <p><input type="submit" value="注册"></p>
+    </form>
+    <script src="./jquery-1.11.1.js"></script>
+    <script src="./jquery.validate.js"></script>
+    <script>
+        /* 
+            声明式验证：程序员只需声明各种验证规则，可以自定义验证失败的信息
+        */
+
+        //对选中表单开启验证
+        $('#myForm').validate({
+            messages:{
+                username:{
+                    required:'用户名是必须的',
+                    minlength:'用户名至少是6位'
+                },
+                pwd1:{
+                    required:'密码是必须的',
+                    minlength:'密码至少是6位',
+                    maxlength:'密码最多八位'
+                },
+                pwd2:{
+                    equalTo:'确认密码不符'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
