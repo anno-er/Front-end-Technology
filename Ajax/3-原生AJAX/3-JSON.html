@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON响应</title>
+    <style>
+        #result {
+            width: 200px;
+            height: 100px;
+            border: solid 1px #89b;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="result"></div>
+    <script>
+        const result = document.getElementById('result')
+        //绑定键盘按下事件
+        window.onkeydown = function () {
+            //创建对象
+            const xhr = new XMLHttpRequest();
+
+            //设置响应体数据的类型  
+            xhr.responseType = 'json'
+            //初始化 设置类型与URL
+            xhr.open('GET', 'http://127.0.0.1:8000/json-server')
+            //设置请求头(设置请求体内容的类型，application/x-www-from-urlencoded：参数查询字符串类型的固定写法)
+            xhr.setRequestHeader('Content-Type', 'application/x-www-from-urlencoded')
+            //发送(请求体)
+            xhr.send()
+            //事件绑定
+            xhr.onreadystatechange = function () {
+                //判断
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        //处理服务端返回的结果
+                        // console.log(xhr.response)
+                        // result.innerHTML = xhr.response
+
+                        //手动对JSON字符串转换为JSON
+                        /* let data = JSON.parse(xhr.response) 
+                        console.log(data)
+                        result.innerHTML = data.name */
+
+                        //自动对JSON字符串转换为JSON,利用xhr.responseType = 'json'设置
+                        console.log(xhr.response)
+                        result.innerHTML = xhr.response.name
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
