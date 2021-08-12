@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //ES6 允许使用 箭头 => 定义函数 ，用于函数声明
+
+        let fn = function (a, b) {
+            return a + b
+        }
+
+        //声明
+        let fn1 = (a, b) => {
+            return a + b
+        }
+
+        //调用
+        let result = fn1(1, 2)
+        console.log(result)
+
+
+
+        //箭头函数声明的特性
+
+        //1.this是静态的，始终指向函数声明时所在作用域下的this
+        function getName() {
+            console.log(this.name)
+        }
+        let getName_arror = () => {
+            console.log(this.name)
+        }
+        //设置window对象的name属性
+        window.name = 'window_name'
+        const school = {
+            name: 'atguigu'
+        }
+        //直接调用
+        getName()  //window_name
+        getName_arror()  //window_name
+        //对象调用 ，使用call方法
+        getName.call(school)  //atguigu
+        getName_arror.call(school)  //仍然是window_name，没有改变
+
+        //2.不能作为构造实例化对象
+        /* let Person = (name, age) => {
+            this.name = name
+            this.age =age
+        }
+        let me = new Person('chang',24)
+        console.log(me) //error Person不是一个构造器 */
+
+        //3.不能使用 arguments 变量, arguments保存函数调用的实参
+        /* let fn2 = () => {
+            console.log(arguments) 
+        }
+        fn(1,2,3)  //error  arguments未定义 */
+
+        //4.箭头函数的简写
+        /* 
+            当形参有且只有一个时可以省略小括号
+
+            当代码体只有一条语句时可以省略花括号,此时return 也必须省略，此时语句的执行结果就是返回值
+        */
+        let add = n => {
+            return n++
+        }
+        console.log(add(5))
+
+        let pow = n =>  n*n
+        console.log(pow(5))
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //ES6引入了新的声明字符串方式 反引号 ``
+
+        //1声明
+        let str = `这是一个字符串`
+        console.log(str,typeof str)
+
+        //2.特性
+            /* 
+                内容中可以直接出现换行符
+                可以进行变量拼接
+            */
+        let str1 = '<ul><li>沈腾</li><li>马丽</li><li>马冬梅</li><li>魏翔</li><li>艾伦</li></ul>'
+
+        //``内部字符串可以直接换行
+        let str2 = `<ul>
+                        <li>沈腾</li>
+                        <li>马丽</li>
+                        <li>马冬梅</li>
+                        <li>魏翔</li>
+                        <li>艾伦</li>
+                    </ul>`
+        //变量拼接
+        let lovest = '卓别林'
+        let out = `${lovest}是我最喜欢的喜剧演员~~`
+        
+        console.log(out)
+
+        
+    </script>
+</body>
+</html>
