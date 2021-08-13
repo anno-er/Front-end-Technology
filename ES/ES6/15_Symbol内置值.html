@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Symbol.hasInstance 类似于构造函数，用于实例化对象 作用：自己控制类型检测
+        class Person{
+            static [Symbol.hasInstance](param){
+                console.log(param)
+                console.log('检测类型')
+                //判断结果取决于返回值
+                return true
+            }
+        }
+        let o = {}
+        console.log(o instanceof Person)
+
+        //Symbol.isConcatSpreadable 表示对象用于数组的concat时，是否可以展开
+        const arr1 = [1,2,3]
+        const arr2 = [4,5,6]
+        console.log(arr1.concat(arr2))//[1, 2, 3, 4, 5, 6]
+
+        arr2[Symbol.isConcatSpreadable] = false
+        console.log(arr1.concat(arr2)) //[1, 2, 3, Array(3)]
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>扩展运算符的应用</title>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <script>
+        //1.数组的合并 
+        const kuaizi = ['王太利','肖央']
+        const fenghuang = ['曾毅','玲花']
+
+        const zuixuanApple = kuaizi.concat(fenghuang) //es5
+        console.log(zuixuanApple)
+
+        const zuixuanApple_1 = [...kuaizi,...fenghuang] //扩展运算符 相当于
+                                                        //['王太利','肖央','曾毅','玲花']
+        console.log(zuixuanApple_1)
+
+        //2.数组的克隆
+        const sanzhihua = ['G','E','M']
+        const sanyecao = [...sanzhihua]
+        console.log(sanyecao)
+
+        //3.将伪数组转为真正的数组
+        const divs = document.querySelectorAll('div')
+        console.log(divs) //是一个object
+
+        const divArr = [...divs]
+        console.log(divArr) //是一个数组，可以用数组的方法
+
+    </script>
+</body>
+</html>

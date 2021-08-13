@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 向对象中添加方法 up down
+        let game = {
+            name: '俄罗斯方块',
+            up: function () { },
+            down: function () { }
+        }
+
+        //声明一个对象
+        let methods = {
+            up: Symbol(),
+            down: Symbol()
+        }
+        //为game扩展方法 ，但不确定对象中是否有同名方法 ，可以用symbol 标识
+        game[methods.up] = function () {
+            console.log('change up')
+        }
+        game[methods.down] = function () {
+            console.log('change down')
+        }
+        console.log(game)
+        game[methods.down]() //调用
+
+
+        //为对象添加独一无二的方法
+        let youxi = {
+            name: '狼人杀',
+            [Symbol('say')]: function () {
+                console.log('请发言')
+            },
+            [Symbol('quit')]: function () {
+                console.log('自曝')
+            }
+        }
+
+        console.log(youxi)
+        const langrensha = Object.getOwnPropertySymbols(youxi);
+        console.log(langrensha)
+        youxi[langrensha[0]]();  //调用成功
+
+        // 方法二
+        const langrensha2 = Reflect.ownKeys(youxi);
+        console.log(langrensha2);
+        youxi[langrensha2[2]]();  //调用成功
+    
+
+    </script>
+</body>
+
+</html>

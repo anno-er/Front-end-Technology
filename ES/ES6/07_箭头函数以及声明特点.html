@@ -33,7 +33,7 @@
         function getName() {
             console.log(this.name)
         }
-        let getName_arror = () => {
+        let getName_arrow = () => {
             console.log(this.name)
         }
         //设置window对象的name属性
@@ -43,10 +43,10 @@
         }
         //直接调用
         getName()  //window_name
-        getName_arror()  //window_name
+        getName_arrow()  //window_name
         //对象调用 ，使用call方法
         getName.call(school)  //atguigu
-        getName_arror.call(school)  //仍然是window_name，没有改变
+        getName_arrow.call(school)  //仍然是window_name，没有改变
 
         //2.不能作为构造实例化对象
         /* let Person = (name, age) => {
@@ -68,7 +68,7 @@
 
             当代码体只有一条语句时可以省略花括号,此时return 也必须省略，此时语句的执行结果就是返回值
         */
-        let add = n => {
+        let add = n => { 
             return n++
         }
         console.log(add(5))

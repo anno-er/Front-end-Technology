@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>迭代器的应用</title>
+</head>
+
+<body>
+    <script>
+        //自定义遍历数据
+
+        const banji = {
+            name: '终极一班',
+            stus: [
+                'xiaoming',
+                'xiaohong',
+                'xiaotian',
+                'knight',
+                'xiaogang'
+            ],
+            [Symbol.iterator]() {
+                //索引变量
+                let index = 0
+                //保存this
+                console.log('aaaa  ',this)
+                let _this = this
+                return {
+                    next: function () {
+                        if (index < _this.stus.length) {
+                            console.log('aaaa  ',_this)
+                            const result =  {value:_this.stus[index],done:false}
+                            index++
+                            return result
+                        }else{
+                            return{value:undefined,done:true}
+                        }
+                    }
+                }
+            }
+        }
+
+        //使用for...of遍历这个对象,每次返回一个对象数组里的成员
+        for (let v of banji) {
+            console.log(v)
+        }
+
+       
+    </script>
+</body>
+
+</html>
