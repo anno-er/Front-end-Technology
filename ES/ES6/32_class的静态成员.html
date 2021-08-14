@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>静态成员</title>
+</head>
+<body>
+    <script>
+        //ES5 的静态成员
+         function Phone(){ 
+
+         } //Phone是函数对象
+         Phone.name = '手机' //这种属于函数对象的属性称为静态成员，属于类而不属于实例对象
+                            //类似于C++中private
+         Phone.change = function(){
+             console.log('我可以改变世界')
+         }
+         Phone.prototype.size = 5.5 
+         let nokia = new Phone() //nokia 是实例对象
+         //console.log(nokia.name) //undefined  
+         //nokia.change() //error
+         console.log(nokia.size) //5.5
+
+
+         //class 中static
+         class Phone_1{
+             //静态属性
+             static name = '手机'
+             static change(){
+                 console.log('we can change the world')
+             }
+         }
+         let xiaomi = new Phone_1()
+         console.log(xiaomi.name) //undefined
+         console.log(Phone_1.name) //手机
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>set 集合</title>
+</head>
+
+<body>
+    <script>
+        /*
+            ES6 提供了新的数据结构 Set（集合）。它类似于数组，但成员的值
+            都是唯一的，集合实现了 iterator 接口，所以可以使用『扩展运算符』
+            和『for…of…』进行遍历。
+        */
+
+        //声明一个set(集合)
+        let s = new Set()
+        console.log(s,typeof s)
+
+        let s2 =new Set(['孙大圣','猪八戒','沙和尚','唐僧','猪八戒']) //  会自动去重
+        console.log(s2) //Set(4) {"孙大圣", "猪八戒", "沙和尚", "唐僧"}
+
+        for(let v of s2){
+            console.log(v)
+        }
+
+        //集合的属性和方法
+        /* 
+            size
+            add
+            delete
+            has
+            clear
+        */
+        console.log(s2.size)
+
+        s2.add('白骨精')
+        console.log(s2)
+
+        s2.delete('白骨精')
+        console.log(s2)
+
+        console.log(s2.has('孙大圣'))
+        console.log(s2.has('红孩儿'))
+
+        s2.clear()
+        console.log(s2)
+        
+
+    </script>
+</body>
+
+</html>

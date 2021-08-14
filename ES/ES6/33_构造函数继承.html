@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //ES5 构造函数的继承
+        //手机
+        function Phone(brand, price) {
+            this.brand = brand
+            this.price = price
+        }
+        //添加方法
+        Phone.prototype.call = function () {
+            console.log('我可以打电话')
+        }
+        //智能手机
+        function smartPhone(brand, price, color, size) {
+            Phone.call(this, brand, price)
+            this.color = color
+            this.size = size
+        }
+        //设置子级构造函数的原型
+        smartPhone.prototype = new Phone
+        smartPhone.prototype.constructor = smartPhone
+
+        //声明子类的方法
+        smartPhone.prototype.photo = function(){
+            console.log('我可以拍照')
+        }
+        smartPhone.prototype.game = function(){
+            console.log('我可以玩游戏')
+        }
+
+        const chuizi = new smartPhone('锤子',2499,'黑色','5.5in')
+        console.log(chuizi)
+    </script>
+</body>
+
+</html>

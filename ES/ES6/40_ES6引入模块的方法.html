@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+        
+        //通用方式引入 js 模块内容
+        /* 
+            import * as m1 from './js/39_m1.js'
+            import * as m1 from './js/39_m2.js'
+            import * as m1 from './js/39_m3.js'
+        */
+
+        //解构赋值形式引入
+        import {school,teach} from './js/39_m1.js'
+        console.log(school)
+        console.log(teach)
+
+        import {school as guigu,findJob} from './js/39_m2.js'
+        console.log(guigu,findJob)
+
+        import {default as m3} from './js/39_m3.js'
+        console.log(m3)
+
+        //简便形式引入 只适用于默认暴露
+        import m3_s from './js/39_m3.js'
+        console.log(m3_s)
+
+        import m1_s from './js/39_m1.js' //error
+
+    </script>
+
+</body>
+</html>

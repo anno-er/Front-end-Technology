@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 声明</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            1) class 声明类
+            2) constructor 定义构造函数初始化
+            3) extends 继承父类
+            4) super 调用父级构造方法
+            5) static 定义静态方法和属性
+            6) 父类方法可以重写
+        */
+
+        //ES5 方式用构造函数实例化一个对象
+        //手机
+        function Phone(brand, price) {
+            this.brand = brand
+            this.price = price
+        }
+        //添加方法
+        Phone.prototype.call = function () {
+            console.log('我可以打电话')
+        }
+        //实例化
+        let Huawei = new Phone('华为', 5999)
+        Huawei.call()
+        console.log(Huawei)
+
+        //class语法
+        class Phone_c {
+            //构造方法 名字是固定的
+            constructor(brand, price) {
+                this.brand = brand
+                this.price = price
+            }
+            //方法必须使用该语法，不能使用call:function这种形式
+            call(){
+                console.log('我可以打电话')
+            }
+        }
+        let onePlus = new Phone_c('1+',1999)
+        console.log(onePlus)
+        onePlus.call()
+    </script>
+</body>
+
+</html>
