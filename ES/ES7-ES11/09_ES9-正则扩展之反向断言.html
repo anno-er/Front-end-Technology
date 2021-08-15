@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则扩展-反向断言</title>
+</head>
+<body>
+    <script>
+        //正向断言 根据当前匹配的后面的内容判断前面内容是否满足条件
+        
+        let str = 'JS5213你知道吗555啦啦啦'
+        // const reg = /\d+(?=啦)/
+        // const result = reg.exec(result)
+
+        //反向断言  根据当前匹配的前面的内容判断前面内容是否满足条件
+        
+        const reg = /(?<=吗)\d+/
+        const result = reg.exec(str)
+
+        console.log(result)
+
+
+    </script>
+</body>
+</html>
