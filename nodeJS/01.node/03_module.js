@@ -18,7 +18,7 @@
 
  */
 //var md = require("./02.module");
-var math = require("./04_math"); //文件模块
+var math = require("./math"); //文件模块
 var fs = require("fs"); //核心模块
 
 
