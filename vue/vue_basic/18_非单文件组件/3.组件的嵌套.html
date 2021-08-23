@@ -9,7 +9,9 @@
 	<body>
 		<!-- 准备好一个容器-->
 		<div id="root">
-			
+			<!-- <hello></hello>
+			<school></school> -->
+			<!-- <app></app> -->
 		</div>
 	</body>
 
@@ -27,7 +29,7 @@
 			`,
 			data(){
 				return {
-					name:'尚硅谷',
+					name:'张三',
 					age:18
 				}
 			}
@@ -49,7 +51,7 @@
 					address:'北京'
 				}
 			},
-			//注册组件（局部）
+			//注册组件（局部）,在school组件中注册student组件
 			components:{
 				student
 			}
@@ -67,10 +69,11 @@
 		
 		//定义app组件
 		const app = Vue.extend({
+			name:'app',
 			template:`
-				<div>	
-					<hello></hello>
+				<div>
 					<school></school>
+					<hello></hello>
 				</div>
 			`,
 			components:{
@@ -81,10 +84,14 @@
 
 		//创建vm
 		new Vue({
-			template:'<app></app>',
+			template:`<app></app>`,
 			el:'#root',
 			//注册组件（局部）
-			components:{app}
+			components:{
+				/* school,
+				hello */
+				app
+			}
 		})
 	</script>
 </html>

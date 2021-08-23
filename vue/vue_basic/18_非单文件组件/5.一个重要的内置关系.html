@@ -8,8 +8,8 @@
 	</head>
 	<body>
 		<!-- 
-				1.一个重要的内置关系：VueComponent.prototype.__proto__ === Vue.prototype
-				2.为什么要有这个关系：让组件实例对象（vc）可以访问到 Vue原型上的属性、方法。
+			1.一个重要的内置关系：VueComponent.prototype.__proto__ === Vue.prototype
+			2.为什么要有这个关系：让组件实例对象（vc）可以访问到 Vue原型上的属性、方法。
 		-->
 		<!-- 准备好一个容器-->
 		<div id="root">
@@ -40,7 +40,7 @@
 			methods: {
 				showX(){
 					console.log(this.x)
-				}
+				} 
 			},
 		})
 
@@ -52,6 +52,7 @@
 			},
 			components:{school}
 		})
+		console.log(school.prototype.__proto__ === Vue.prototype)
 
 		
 		//定义一个构造函数
