@@ -2,12 +2,11 @@
   <li>
     <label>
       <!-- <input type="checkbox" :checked ='todo.done' @click="handleCheck(todo.id)"/> -->
-      <!-- 如下代码也能实现功能，但由于修改了prop传入了数据，虽然存在与对象中，检测不多，也不推荐使用 -->
+      <!-- 如下代码也能实现功能，但由于修改了prop传入了数据，虽然存在与对象中，检测不到，也不推荐使用 -->
       <!-- <input type="checkbox" v-model=" todo.done"/> --> 
       <input
         type="checkbox"
         :checked="todo.done"
-        :checkTodo="checkTodo"
         @change="handleCheck(todo.id)"
       />
       <span>{{ todo.title }}</span>

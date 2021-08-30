@@ -13,7 +13,7 @@
     <!-- 这种方式更灵活 -->
     <!-- <Student ref="student"></Student> -->
 
-	<!-- 利用native通过父元素为组件绑定原生事件 -->
+	<!-- 利用native通过父元素为子组件绑定原生事件 -->
     <Student ref="student" @click.native='show'></Student>
   </div>
 </template>

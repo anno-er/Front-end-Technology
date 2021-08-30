@@ -7,7 +7,6 @@
       <input
         type="checkbox"
         :checked="todo.done"
-        :checkTodo="checkTodo"
         @change="handleCheck(todo.id)"
       />
       <span>{{ todo.title }}</span>
@@ -19,18 +18,20 @@
 <script>
 export default {
   name: "MyItem",
-  //接收todo对象 checkTodo函数
-  props: ["todo","checkTodo","deleteTodo"],
+  //接收todo对象
+  props: ["todo"],
   methods: {
     // 勾选 or 取消勾选
     handleCheck(id) {
       //通知APP将对应的todo对象的Done值取反
-      this.checkTodo(id)
+      //this.checkTodo(id)
+      this.$bus.$emit('checkTodo',id)
     },
     //删除
     handleDelete(id){
       if(confirm('确定删除吗？')){
-        this.deleteTodo(id)
+        //this.deleteTodo(id)
+        this.$bus.$emit('deleteTodo',id)
       }
     }
   },
