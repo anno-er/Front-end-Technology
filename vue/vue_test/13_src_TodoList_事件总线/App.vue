@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import pubsub from "pubsub-js";
 import MyFooter from "./conponents/MyFooter";
 import MyHeader from "./conponents/MyHeader";
 import MyList from "./conponents/MyList";
@@ -45,13 +44,9 @@ export default {
       });
     },
     //删除一个todo
-    /* deleteTodo(id) {
-      this.todos = this.todos.filter((todo) => todo.id !== id);
-    }, */
-    deleteTodo(msgName, id) {
+    deleteTodo(id) {
       this.todos = this.todos.filter((todo) => todo.id !== id);
     },
-
     //全选与取消全选
     checkAllTodo(done) {
       this.todos.forEach((todo) => {
@@ -62,34 +57,22 @@ export default {
     clearAllTodo() {
       this.todos = this.todos.filter((todo) => !todo.done);
     },
-    updataTodo(id,value) {
-      this.todos.forEach((todo) => {
-        if(todo.id === id){
-          todo.title = value
-        }
-      });
-    },
   },
   watch: {
     todos: {
-      deep: true,
+      deep:true,
       handler(value) {
         localStorage.setItem("todos", JSON.stringify(value));
       },
     },
   },
-  mounted() {
-    this.$bus.$on("checkTodo", this.checkTodo);
-    // this.$bus.$on('deleteTodo',this.deleteTodo) //事件总线
-    this.pubId = pubsub.subscribe("deleteTodoId", this.deleteTodo); //消息订阅与发布
-
-    this.$bus.$on("updataTodo", this.updataTodo);
+  mounted(){
+    this.$bus.$on('checkTodo',this.checkTodo)
+    this.$bus.$on('deleteTodo',this.deleteTodo)
   },
   beforeDestroy() {
-    this.$bus.$off("checkTodo");
-    this.$bus.$off("updataTodo");
-    // this.$bus.$off("deleteTodo");
-    pubsub.unsubscribe(this.pubId); //销毁前取消订阅
+    this.$bus.$off('checkTodo')
+    this.$bus.$off('deleteTodo')
   },
 };
 </script>
@@ -118,13 +101,6 @@ body {
   color: #fff;
   background-color: #da4f49;
   border: 1px solid #bd362f;
-}
-
-.btn-edit {
-  color: #fff;
-  background-color: skyblue;
-  border: 1px solid rgb(54, 138, 172);
-  margin-right: 5px;
 }
 
 .btn-danger:hover {

@@ -62,13 +62,6 @@ export default {
     clearAllTodo() {
       this.todos = this.todos.filter((todo) => !todo.done);
     },
-    updataTodo(id,value) {
-      this.todos.forEach((todo) => {
-        if(todo.id === id){
-          todo.title = value
-        }
-      });
-    },
   },
   watch: {
     todos: {
@@ -82,14 +75,11 @@ export default {
     this.$bus.$on("checkTodo", this.checkTodo);
     // this.$bus.$on('deleteTodo',this.deleteTodo) //事件总线
     this.pubId = pubsub.subscribe("deleteTodoId", this.deleteTodo); //消息订阅与发布
-
-    this.$bus.$on("updataTodo", this.updataTodo);
   },
   beforeDestroy() {
     this.$bus.$off("checkTodo");
-    this.$bus.$off("updataTodo");
     // this.$bus.$off("deleteTodo");
-    pubsub.unsubscribe(this.pubId); //销毁前取消订阅
+    pubsub.unsubscribe(this.pubId) //销毁前取消订阅
   },
 };
 </script>
@@ -118,13 +108,6 @@ body {
   color: #fff;
   background-color: #da4f49;
   border: 1px solid #bd362f;
-}
-
-.btn-edit {
-  color: #fff;
-  background-color: skyblue;
-  border: 1px solid rgb(54, 138, 172);
-  margin-right: 5px;
 }
 
 .btn-danger:hover {
