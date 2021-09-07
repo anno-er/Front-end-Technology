@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //源数据
+        let person = {
+            name:'张三',
+            age:18
+        }
+
+        //模拟vue2种实现响应式
+        //#region
+        /* let p = {}
+        Object.defineProperty(p,'name',{
+            configurable:true,
+            get(){ //有人读取name时调用
+                return person.name
+            },
+            set(value){ //有人修改name时调用
+                console.log('有人修改了name属性，现在更新界面')
+                person.name = value
+            }
+        })
+
+        Object.defineProperty(p,'age',{
+            configurable:true,
+            get(){ //有人读取age时调用
+                return person.age
+            },
+            set(value){ //有人修改age时调用
+                console.log('有人修改了age属性，现在更新界面')
+                person.age = value
+            }
+        }) */
+        //#endregion
+
+        //模拟vue3中实现响应式
+        //#region
+        let p = new Proxy(person,{
+            //有人读取p的某个属性时调用
+            get(target,propName){
+                console.log(`有人读取了p身上的${propName}属性`)
+                Reflect.get(target,propName)
+            },
+            //有人修改或新增p的某个属性时调用
+            set(target,propName,value){
+                console.log(`有人更改了p身上的${propName}属性，更新界面`)
+                Reflect.set(target,propName)
+            },
+            //有人删除p的某个属性时调用
+            deleteProperty(target,propName){
+                console.log(`有人删除了p身上的${propName}属性，更新界面`)
+                return Reflect.deleteProperty(target,propName)
+            }
+        })
+        //#endregion
+        
+        //reflect方法
+        //#region
+        // let obj = {a:1,b:2}
+        //通过Object.defineProperty去操作
+        /* Object.defineProperty(obj,'c',{
+            get(){
+                return 3
+            }
+        })
+        Object.defineProperty(obj,'c',{
+            get(){
+                return 4
+            }
+        }) */
+
+        //通过Reflect.defineProperty去操作，这种能够更友好一点，兼容错误
+        /* const x1 = Reflect.defineProperty(obj,'c',{
+            get(){
+                return 3
+            }
+        })
+        const x2 = Reflect.defineProperty(obj,'c',{
+            get(){
+                return 4
+            }
+        })
+
+        console.log(x1,x2) */
+        //#endregion
+    </script>
+</body>
+</html>
