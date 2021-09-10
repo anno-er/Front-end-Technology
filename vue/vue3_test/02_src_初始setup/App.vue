@@ -44,7 +44,7 @@
     },
 
 
-    //早vue3中也可以用vue2的配置方式
+    //在vue3中也可以用vue2的配置方式
     data() {
       return {
         sex:'男'
