@@ -9,7 +9,6 @@
       <template v-slot:fallback>
         <h3>loading....</h3>
       </template>
-      
     </Suspense>
     
   </div>

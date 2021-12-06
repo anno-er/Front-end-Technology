@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <!-- 
         网页分为三个部分：
@@ -28,7 +30,7 @@
             -开始时，绝对不要使用内联样式
             <p style="color: red;font-size: 60px;">少小离家老大回，乡音未改鬓毛衰</p>
     -->
-    
+
 
     <!-- 
         第二种方式:内部样式表
@@ -38,12 +40,15 @@
         问题：只能对一个网页起作用，不能跨页面复用
     -->
     <style>
-        p{color: green;font-size: 50px;}
+        p {
+            color: green;
+            font-size: 50px;
+        }
     </style>
-   <p>少小离家老大回，乡音未改鬓毛衰</p>
-   <p>少小离家老大回，乡音未改鬓毛衰</p>
+    <p>少小离家老大回，乡音未改鬓毛衰</p>
+    <p>少小离家老大回，乡音未改鬓毛衰</p>
 
-   <!-- 
+    <!-- 
        第三种方式：外部样式表：最佳的使用方式
         可以将css样式编写到一个外部css文件中
         然后通过link标签引入外部的css文件
@@ -55,6 +60,7 @@
     <link rel="stylesheet" href="./style.css">
 
 
-    
+
 </body>
+
 </html>

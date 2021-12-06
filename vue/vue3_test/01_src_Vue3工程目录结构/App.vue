@@ -1,7 +1,7 @@
 <template>
   <!-- Vue3组件中的模版结构可以没有根标签 -->
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
 </template>
 
 <script>
