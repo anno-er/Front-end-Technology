@@ -1,0 +1,44 @@
+{
+  "id": "2992572",
+  "name": "navigation练习项目",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "33515",
+      "name": "profile",
+      "font_class": "profile",
+      "unicode": "e6b7",
+      "unicode_decimal": 59063
+    },
+    {
+      "icon_id": "33516",
+      "name": "home",
+      "font_class": "home",
+      "unicode": "e6b8",
+      "unicode_decimal": 59064
+    },
+    {
+      "icon_id": "159926",
+      "name": "Message",
+      "font_class": "xiaoxi",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "6109994",
+      "name": "photos",
+      "font_class": "photos",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "8326703",
+      "name": "Setting",
+      "font_class": "Setting",
+      "unicode": "e64e",
+      "unicode_decimal": 58958
+    }
+  ]
+}

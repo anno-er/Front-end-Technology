@@ -30,7 +30,6 @@
 			// this.$bus.$off('hello')
 			pubsub.unsubscribe(this.pubId)
 		}
-		
 	}
 </script>
 
