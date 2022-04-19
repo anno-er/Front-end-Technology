@@ -13,6 +13,7 @@
 
         /* 
             垂直外边距的重叠
+                外边距重叠发生条件：垂直方向地外边距发生了接触
                 -相邻的垂直方向外边距会发生重叠
                 -兄弟元素
                     -兄弟元素之间的相邻垂直外边距会取两者之间的较大值（两者都是正值）
@@ -44,15 +45,16 @@
             width: 200px;
             height: 200px;
             background-color: tomato;
+            /* margin-top: 100px; */
             /* padding-top: 100px; */
-            /* border-top: 1px,tomato,solid; */
+            border-top: 1px black solid;
         }
 
         .box4{
             height: 100px;
             width: 100px;
             background-color: orange;
-            /* margin-top: 100px; */
+            margin-top: 100px;
         }
 
 
