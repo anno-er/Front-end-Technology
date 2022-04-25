@@ -83,7 +83,7 @@ export default {
   text-align: center;
   text-decoration: none;
   font-size: 25px;
-  color: #fff;
+  color: rgb(100, 78, 78);
 }
 
 .side ul .active{
