@@ -2,6 +2,7 @@
   <div class="container">
     <div class="navigation">
       <ul>
+        <!-- v-for 绑定事件以及绑定样式 -->
         <li v-for='(subnav,index) in subnavs' :key='index' :class="checkedID == index ?'active':''" @click="Checked($event,index)">
           <a href="#">
             <span>
@@ -235,6 +236,9 @@ a {
 
 /*   
 总结：
+
+    icon-font的本地用法
+
     v-for 的用法 
     
     v-for 绑定函数 绑定样式  index的使用（index表示当前元素在父元素中的位置）
