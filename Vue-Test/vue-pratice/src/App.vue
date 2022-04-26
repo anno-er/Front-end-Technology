@@ -4,10 +4,17 @@
     <div class="side">
       <!-- 头像 -->
       <div class="img_box"></div>
+      
       <!-- 练习项目标题 -->
-     
       <ul>
-        <router-link class="r_link" active-class="active" to="/navigation">navigation</router-link>
+        <li>
+          <router-link class="r_link" active-class="active" to="/navigation">Navigation</router-link>
+        </li>
+        <li>
+          <router-link class="r_link" active-class="active" to="/matGlass">Mat Glass</router-link>
+        </li>
+        
+        
       </ul>
 
     </div>
@@ -68,7 +75,7 @@ export default {
 }
 
 .side ul{
-  display: flex;
+  /* display: flex; */
   width: 100%;
   height: 100%;
   /* background-color: rgb(179, 34, 34); */
