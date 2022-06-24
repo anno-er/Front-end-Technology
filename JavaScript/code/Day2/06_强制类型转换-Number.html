@@ -16,11 +16,11 @@
                 - 布尔-->数字
                     true转成1 false转成0
                 - Null-->数字 0
-                - Undefined-->数字  NaN
+                - Undefined-->数字 NaN
 
             方法二：这种方式专门用于字符串
-                parseInt():将一个字符串中的有效整数取出，并转换为整数
-                parseFloat():将一个字符串中的有效整数取出，并转换为浮点数
+                parseInt():将一个字符串中的有效整数取出，并转换为Number
+                parseFloat():将一个字符串中的有效整数与小数取出，并转换为Number
 
                 如果对非String使用parseInt()或者parseFloat(),会先将其转换为
                 String，然后再操作。
@@ -28,12 +28,15 @@
        */
        var a = "123";
        var b = Number(a); //方法一
+       console.log(b)
 
        var c = "123px";
        var d = parseInt(a); //方法二
+       console.log(d)
 
        var e="123.456px"
-       var f = parseFloat(a);
+       var f = parseFloat(e);
+       console.log(f)
 
     </script>
 </head>

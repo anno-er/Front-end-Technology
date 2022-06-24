@@ -6,11 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        html{
-
-            perspective: 800px;
-        }
+        
         body{
+            perspective: 800px;
             border: 1px rosybrown solid;
             background-color: rgb(228, 226, 226);
         }
@@ -20,7 +18,7 @@
             background-color: skyblue;
             margin: 200px auto;
 
-            transition: 5s;
+            transition: 2s;
         }
         body:hover .box1{
             /*
@@ -30,8 +28,9 @@
                 rotateZ()
              */
              /* transform: rotateZ(360deg); */
-             transform: rotateX(90deg);
-             transform: rotateY(90deg);
+             /* transform: rotateX(90deg); */
+             /* transform: rotateY(90deg); */
+             transform: rotateY(60deg) translateX(-100px);
 
             /* 设置是否显示元素背面 visible hidden */
              backface-visibility: hidden;
