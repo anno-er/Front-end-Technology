@@ -13,7 +13,7 @@
         function MyClass() {
 
         }
-        
+
         //向MyClass的原型中添加一个name属性
         MyClass.prototype.name = "我是原型中的名字";
         var mc = new MyClass();
@@ -39,12 +39,15 @@
                 如果原型对象中没有，则回去原型的原型对象中寻找，直至Objecct对象的原型
                 Ojbect对象的原型没有原型，如果在Object中依然没有找到，则返回undefined
         */
-        console.log(mc.__proto__.__proto__);//原型的原型，为null，Object没有原型
+        console.log(mc.__proto__) //MyClass
+        console.log(mc.__proto__.__proto__);//原型的原型，为Object
         console.log(mc.__proto__.__proto__.hasOwnProperty("hasOwnProperty"));//true
-
+        console.log(mc.__proto__.__proto__.__proto__);//原型的原型的原型，为null，Object没有原型
         
 
-        
+
+
+
 
     </script>
 </head>

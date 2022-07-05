@@ -8,20 +8,21 @@
     <title>Document</title>
     <script>
         //打印九九乘法表
-        var i, j;
-
-        // for (i = 1; i <= 9; i++) {
-        //     for (j = 1; j <= i; j++) {
-        //         document.write(i + "x" + j + " = " + i * j + "&nbsp&nbsp&nbsp");
+        // var i , j;
+        // for(i=1;i<10;i++){
+        //     for(j=1;j<=i;j++){
+        //         document.write(i +" * "+j+" = "+i*j+"&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" );
         //     }
-        //     document.write("<br><br>")
+        //     document.write("<br><br>");
         // }
 
         var flag = true;
+        var count=0;
 
         //打印出1-100之间的所有的质数
-        for (i = 2; i < 100; i++) {
-            for (j = 2; j < i; j++) {
+        console.time("test-time")
+        for (i = 2; i < 10000; i++) {
+            for (j = 2; j <= Math.sqrt(i); j++) {
                 if (i % j == 0) {
                     flag = false;
                     break;
@@ -29,10 +30,12 @@
             }
             if(flag == true){
                 document.write(i + "&nbsp");
-
+                count++;
             }
             flag = true;
         }
+        document.write("<br>"+count);
+        console.timeEnd("test-time");
     </script>
 </head>
 

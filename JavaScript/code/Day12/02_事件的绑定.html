@@ -35,16 +35,16 @@
                     这种方法可为同一元素相同事件绑定多个响应函数，按绑定顺序执行
                     但是不兼容IE8及以下的浏览器
             */
-            // btn01.addEventListener("click", function () {
-            //     alert(1);
-            // }, false);
+            btn01.addEventListener("click", function () {
+                alert(1);
+            }, false);
 
-            // btn01.addEventListener("click", function () {
-            //     alert(2);
-            // }, false);
+            btn01.addEventListener("click", function () {
+                alert(2);
+            }, false);
 
             /* 
-                IE8及一下的方法:  attachEvent()
+                IE8及以下的方法:  attachEvent()
                 参数
                     1. 事件的字符串 需要使用on
                     2. 回调函数
@@ -59,10 +59,10 @@
             //     alert(2);
             // })
 
-            bind(btn01,"click",function(){
+            bind(btn01,"onclick",function(){
                 alert(1);
             })
-            bind(btn01,"click",function(){
+            bind(btn01,"onclick",function(){
                 alert(2);
             })
 

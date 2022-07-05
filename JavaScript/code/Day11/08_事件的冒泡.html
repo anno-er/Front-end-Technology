@@ -35,14 +35,14 @@
                 alert("span单击响应函数");
                 //取消冒泡
                 //将cancelBubble 设置为true，即可取消冒泡
-                event.cancelBubble = true;
+                // event.cancelBubble = true;
             }
             //为box1绑定一个单机响应函数
             var box1 = document.getElementById("box1");
             box1.onclick = function(event){
                 alert("div单击响应函数");
                 event = event || window.event;
-                event.cancelBubble = true;
+                // event.cancelBubble = true;
             }
             //为body绑定一个单机响应函数
             document.body.onclick = function(){

@@ -15,9 +15,9 @@
            if(Number.isInteger(num) || num<=1){
                 break;
            }
-           num = +prompt("输入数字不合法，请重新输入一个整数：");
+           num = prompt("输入数字不合法，请重新输入一个整数：");
        }
-
+       
        var flag = true;
        //判读质数
        for(var i=2;i<=Math.sqrt(num);i++){
@@ -26,7 +26,6 @@
                break;
            }
        }
-
        if(flag == true){
            console.log(num + "是质数");
        }

@@ -49,11 +49,13 @@
                 document.querySelector()
                  需要一个选择器的字符串作为参数，可以根据一个css选择器来查询一个元素对象
                  虽然IE8中没有getElementsByClassName(),但是可以使用querySelector代替
-                 使用该方法只会返回位移的一个元素，如果满足条件的元素有多个，那个么只会返回第一个
+                 使用该方法只会返回唯一的一个元素，如果满足条件的元素有多个，那个么只会返回第一个
 
             */
             var div = document.querySelector(".box1 div");
             console.log(div.innerHTML);
+
+            var box1 = document.querySelector(".box1");
 
             var divs = document.querySelector(".box1");
             console.log(divs.innerHTML);

@@ -17,7 +17,7 @@
         console.log(d);
 
         //创建一个指定的时间对象
-        //需要在构造函数中传递一个表示水煎的字符串作为参数
+        //需要在构造函数中传递一个表示时间的字符串作为参数
         //日期的格式 月份/日/年 时:分:秒
         var d2 = new Date("07/06/2021 11:10:30");
         console.log(d2);
@@ -26,26 +26,26 @@
         /* 
              getData:获取当前的日期对象的几号
         */
-        var date = d2.getDate();
+        var date = d.getDate();
         console.log("date = "+date);
 
         // getDay:获取当前的星期 (1 2 3 4 5 6 0)
-        var day = d2.getDay();
+        var day = d.getDay();
         console.log("day = "+day);
 
         //gerMonth:获取当前月份 0-11 0表示一月。。。11表示12月
-        var month = d2.getMonth();
-        console.log("month = "+month);
+        var month = d.getMonth();
+        console.log("month = "+ (month+1));
 
         //getFullYear:获取当前日期对象的年份
-        var year = d2.getFullYear();
+        var year = d.getFullYear();
         console.log("year = "+year);
         
         //getHours、getMinutes、getSeconds、getMillseconds、
 
         //getTime：返回从格林威治标准时间的1970年1月1日0时0分0秒至今的毫秒数,也就是时间戳
         //计算机底层在保存时间时，都是使用时间戳,会自动转化
-        var time = d2.getTime();
+        var time = d.getTime();
         console.log("time = "+time);
         //console.log(time/1000/60/60/24/365);
 
@@ -61,7 +61,7 @@
         var time_start = Date.now();
        
         for(var i=0;i<10000;i++){
-            console.log(i);
+            // console.log(i);
         }
         var time_end = Date.now();
 

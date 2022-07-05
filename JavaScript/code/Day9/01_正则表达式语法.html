@@ -15,7 +15,7 @@
         console.log(reg.test("aaacssc"));
 
         /* 
-            量词：设置一个内容出现的次数]
+            量词：设置一个内容出现的次数
                 {n} 出现n次
                 {m-n} 出现m-n次
                 {m,} 出现m次以上
@@ -25,7 +25,7 @@
                 量词只对全边一个内容起作用
 
         */
-        reg = /a{34/; //a连续出现4次
+        reg = /a{4}/; //a连续出现4次
         console.log(reg.test("aaaacssc"));
 
         reg = /(ab){3}/; //ab连续出现三次 ababab

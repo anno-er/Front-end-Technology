@@ -68,8 +68,11 @@
                 默认只会替换第一个
         */
 
+        str = "1a2b3c4d5e6f7A8B9C";
         result = str.replace("a","@_@");
+        
         console.log("result = " + result);
+        console.log(str);
 
         result = str.replace(/a/gi,"@_@");
         console.log("result = " + result);

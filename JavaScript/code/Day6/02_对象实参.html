@@ -41,24 +41,30 @@
         /* 
             实参可以是一个对象，当函数参数过多时，可以将一个参数封装称为一个对象
         */
-        var person = {
+        var person1 = {
             name: "孙大圣",
             age: 48000,
             gender: "男",
             address: "花果山"
         }
 
+        var persons={
+            person1,
+            person2:{name:"zhubajie",age:250,gender:"男",address:"高老庄"}
+        }
+        console.log(persons)
+
         function sayHello_1(o) {
             console.log("我叫" + o.name + "，" + o.age + "岁，" + o.gender + ",家住" + o.address);
         }
-        sayHello_1(person);
+        sayHello_1(persons.person1);
 
         /* 
             实参也可以是一个函数
         */
         function func(a){
             //console.log("a = "+a);
-            a(person);
+            a(person1);
         }
         func(sayHello_1);
 
