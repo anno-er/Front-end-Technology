@@ -8,8 +8,10 @@
     <style>
         html{
             perspective: 800px;
+            
         }
         body{
+            perspective: 800px; 
             background-color: slategray;
         }
         .cube{
@@ -17,6 +19,8 @@
             height: 200px;
             margin: 100px auto;
             position: relative;
+
+
 
             /* 设置3d变形效果 */
             transform-style: preserve-3d;
@@ -29,6 +33,7 @@
             /* 为元素设置透明效果 */
             opacity: 0.9;
             position: absolute;
+            /* backface-visibility: hidden; */
         }
         img{
             vertical-align: top;

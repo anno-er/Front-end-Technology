@@ -42,7 +42,7 @@
                                          
                     transition-timing-function: 指定过渡的时间函数(z执行方式)
                                         可选值：
-                                            ease:慢速开始，先加速，再减速
+                                            ease:慢速开始，先加速，再减速  默认方式
                                             linear:匀速运动
                                             ease-in：慢速开始，一直加速
                                             ease-out:快速开始，一直减速
@@ -56,13 +56,13 @@
              */
             /* transition-property: width,height; */
 
-            /* transition-property: all;
-            transition-duration: 2s;
-            transition-timing-function: steps(20,end);
-            transition-delay: 2s; */
+            /* transition-property: all; */
+            /* transition-duration: 2s; */
+            /* transition-timing-function: steps(20,end); */
+            /* transition-delay: 2s;  */
 
             /* 简写属性transition: 同时设置所有的过渡属性，只有一个要求，则两个时间中的第一个时持续时间，后一个时延迟时间 */
-            transition:2s margin-left 1s
+            transition:2s all 1s;
         }
 
         .box1:hover .box2{
