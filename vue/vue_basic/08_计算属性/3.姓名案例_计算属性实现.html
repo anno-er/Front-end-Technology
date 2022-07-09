@@ -11,7 +11,7 @@
 <body>
 	<!-- 
 		计算属性：
-			1.定义：要用的属性不存在，要通过已有属性计算得来。
+			1.定义：要用的属性不存在，要通过已有属性计算得来一个新的属性。
 			2.原理：底层借助了Objcet.defineproperty方法提供的getter和setter。
 			3.get函数什么时候执行？
 				(1).初次读取时会执行一次。
@@ -19,7 +19,7 @@
 			4.优势：与methods实现相比，内部有缓存机制（复用），效率更高，调试方便。
 			5.备注：
 				1.计算属性最终会出现在vm上，直接读取使用即可。
-				2.如果计算属性要被修改，那必须写set函数去响应修改，且set中要引起计算时依赖的数据发生改变。
+				2.如果计算属性要被修改，那必须写set函数去相应修改，且set中要引起计算时依赖的数据发生改变。
 		-->
 	<!-- 准备好一个容器-->
 	<div id="root">
@@ -40,29 +40,29 @@
 		},
 
 		//计算属性配置项
-		computed:{
-			fullName:{
+		computed: {
+			fullName: {
 				//get 当有人读取fullName时，get被调用，返回值就是fullName的值
 				/* 
 					get调用时机：
 						初次读取fullName时
 						所依赖的数据发生变化时
 				*/
-				get(){
+				get () {
 					console.log('get被调用了')
-					return this.firstName+'-'+this.lastName
+					return this.firstName + '-' + this.lastName
 				},
 
 				//set 当有人更改fullName时，set被调用，参数值就是更改后的fullName值
-				set(value){
-					console.log('set',value)
+				set (value) {
+					console.log('set', value)
 					const arr = value.split('-')
 					this.firstName = arr[0]
 					this.lastName = arr[1]
 				}
 			}
 		}
-		
+
 	})
 </script>
 
